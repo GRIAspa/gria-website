@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GRIA SpA - Gestión Resiliente de Innovación Ambiental. Soluciones de trazabilidad blockchain para economía circular y gestión de residuos en Chile.">
-    <meta name="keywords" content="GRIA, BECO, blockchain, trazabilidad, economía circular, ley REP, gestión ambiental, Chile, reciclaje, sostenibilidad">
-    <title>GRIA SpA - Gestión Resiliente de Innovación Ambiental</title>
+    <meta name="description" content="GRIA SpA - Transformando la crisis ambiental en oportunidad. BECO: tecnología blockchain para un futuro consciente y sostenible.">
+    <meta name="keywords" content="GRIA, BECO, blockchain, economía circular, sostenibilidad, Chile, consciencia ambiental">
+    <title>GRIA SpA - De la Crisis a la Consciencia</title>
     <style>
         * {
             margin: 0;
@@ -17,17 +17,24 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
+            overflow-x: hidden;
         }
 
-        /* Header */
+        /* Header - Minimal */
         header {
-            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
             color: white;
             padding: 1rem 0;
-            position: sticky;
-            top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: background 0.3s;
+        }
+
+        header.scrolled {
+            background: rgba(45, 80, 22, 0.95);
         }
 
         nav {
@@ -40,8 +47,9 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
+            letter-spacing: 2px;
         }
 
         .nav-links {
@@ -54,191 +62,387 @@
             color: white;
             text-decoration: none;
             transition: opacity 0.3s;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .nav-links a:hover {
-            opacity: 0.8;
+            opacity: 0.7;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #1a3409 0%, #2d5016 100%);
+        /* Hero - Dark to Light */
+        .hero-dark {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #0a0a0a 0%, #1a1a1a 50%, #2d2d2d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            padding: 6rem 2rem;
+            text-align: center;
+            padding: 0 2rem;
+            overflow: hidden;
+        }
+
+        .hero-dark::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(139, 0, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(70, 70, 70, 0.1) 0%, transparent 50%);
+            animation: darkPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes darkPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero-dark h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease forwards;
+        }
+
+        .hero-dark .crisis-text {
+            color: #999;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease 0.5s forwards;
+        }
+
+        /* Video Placeholder */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 3rem auto;
+            padding-bottom: 45%;
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease 1s forwards;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Transition Section - From Dark to Light */
+        .transition-section {
+            background: linear-gradient(to bottom, #2d2d2d 0%, #f5f9f3 100%);
+            padding: 8rem 2rem;
             text-align: center;
         }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
+        .transition-section h2 {
+            font-size: 2.5rem;
+            color: #2d5016;
+            margin-bottom: 2rem;
+            font-weight: 300;
         }
 
-        .hero p {
+        .transition-section p {
             font-size: 1.3rem;
+            color: #555;
             max-width: 800px;
-            margin: 0 auto 2rem;
-            opacity: 0.95;
-            animation: fadeInUp 1s ease 0.2s both;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: #66bb6a;
-            color: white;
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(102, 187, 106, 0.3);
-        }
-
-        /* Sections */
+        /* Journey Sections */
         section {
+            padding: 6rem 2rem;
+        }
+
+        .section-inner {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
         }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        /* Citizens Section */
+        .citizens-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+        }
+
+        .citizens-section h2 {
             color: #2d5016;
             text-align: center;
         }
 
-        .subtitle {
-            text-align: center;
-            color: #666;
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-        }
-
-        /* Features Grid */
-        .features-grid {
+        .citizen-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .feature-card {
+        .citizen-card {
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #66bb6a;
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        .citizen-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
+        .citizen-card h3 {
             color: #2d5016;
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
 
-        /* BECO Section */
-        .beco-section {
-            background: linear-gradient(135deg, #f5f9f3 0%, #e8f5e9 100%);
-            padding: 4rem 2rem;
-        }
-
-        .beco-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .beco-highlight {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 5px solid #4a7c2c;
-            margin: 2rem 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-
-        .beco-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .beco-feature-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-top: 3px solid #66bb6a;
-        }
-
-        .beco-feature-item h4 {
-            color: #2d5016;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Services Section */
-        .services-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .service-item {
-            background: #f9f9f9;
-            padding: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid #4a7c2c;
-        }
-
-        .service-item h3 {
-            color: #2d5016;
+        .citizen-card .icon {
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
 
-        /* Contact Section */
-        .contact-section {
-            background: #2d5016;
+        .learn-more {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #4a7c2c;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .learn-more:hover {
+            color: #2d5016;
+        }
+
+        /* Companies Section */
+        .companies-section {
+            background: white;
+        }
+
+        .companies-section h2 {
+            color: #1a3409;
+            text-align: center;
+        }
+
+        .company-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .company-card {
+            background: linear-gradient(135deg, #f5f9f3 0%, #ffffff 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border-left: 5px solid #4a7c2c;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .company-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            transform: translateX(10px);
+        }
+
+        .company-card h3 {
+            color: #1a3409;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+
+        .company-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Municipalities Section */
+        .municipalities-section {
+            background: linear-gradient(135deg, #2d5016 0%, #1a3409 100%);
+            color: white;
+        }
+
+        .municipalities-section h2 {
             color: white;
             text-align: center;
-            padding: 4rem 2rem;
         }
 
-        .contact-section h2 {
-            color: white;
+        .municipalities-section .subtitle {
+            color: rgba(255,255,255,0.8);
         }
 
-        .contact-info {
-            margin-top: 2rem;
-            font-size: 1.1rem;
+        .municipality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .contact-info a {
+        .municipality-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+
+        .municipality-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+
+        .municipality-card h3 {
             color: #66bb6a;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .municipality-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* BECO Deep Dive */
+        .beco-deep {
+            background: #f5f9f3;
+            padding: 6rem 2rem;
+        }
+
+        .beco-deep h2 {
+            color: #2d5016;
+            text-align: center;
+        }
+
+        .beco-story {
+            max-width: 900px;
+            margin: 3rem auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            line-height: 1.8;
+        }
+
+        .beco-story h3 {
+            color: #1a3409;
+            margin-bottom: 1.5rem;
+        }
+
+        .beco-story p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a3409 0%, #2d5016 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #66bb6a;
+            color: white;
+            padding: 1.2rem 3rem;
             text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(102, 187, 106, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 187, 106, 0.4);
+            background: #4a7c2c;
         }
 
         /* Footer */
         footer {
-            background: #1a3409;
+            background: #0a0a0a;
             color: white;
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 2rem;
+        }
+
+        footer a {
+            color: #66bb6a;
+            text-decoration: none;
         }
 
         /* Animations */
@@ -255,159 +459,174 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
+            .hero-dark h1 {
+                font-size: 2.2rem;
             }
 
             .nav-links {
-                flex-direction: column;
-                gap: 1rem;
+                display: none;
             }
 
             h2 {
                 font-size: 2rem;
+            }
+
+            .video-container {
+                padding-bottom: 56.25%;
             }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header id="header">
         <nav>
-            <div class="logo">GRIA SpA</div>
+            <div class="logo">GRIA</div>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#beco">BECO</a></li>
-                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#ciudadanos">Ciudadanos</a></li>
+                <li><a href="#empresas">Empresas</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <h1>Gestión Resiliente de Innovación Ambiental</h1>
-        <p>Transformamos la economía circular con tecnología blockchain. Soluciones inteligentes de trazabilidad para un futuro sostenible.</p>
-        <a href="#beco" class="cta-button">Conoce BECO</a>
+    <!-- Hero Dark - La Tormenta -->
+    <section class="hero-dark" id="inicio">
+        <div class="hero-content">
+            <h1>DE LA CRISIS A LA CONSCIENCIA</h1>
+            <p class="crisis-text">Cada año, 8 millones de toneladas de plástico llegan a nuestros océanos.<br>
+            La crisis es real. Pero la solución también existe.</p>
+            
+            <!-- Video Container -->
+            <div class="video-container">
+                <div class="video-placeholder">
+                    🎬 [VIDEO: Comunidad Resiliente + Tecnología]<br>
+                    <small style="font-size: 0.8rem; margin-top: 1rem; display: block;">
+                    Placeholder para video de IA<br>
+                    Mostrando: Crisis → Tecnología → Transformación → Comunidad Unida
+                    </small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            Descubre cómo ↓
+        </div>
     </section>
 
-    <!-- About Section -->
-    <section>
-        <h2>¿Quiénes Somos?</h2>
-        <p class="subtitle">GRIA SpA es una empresa chilena pionera en la integración de tecnologías emergentes con gestión ambiental.</p>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🌱</div>
-                <h3>Innovación Ambiental</h3>
-                <p>Desarrollamos soluciones tecnológicas que transforman la gestión de residuos y recursos, alineadas con la Ley REP 20920 de Chile.</p>
-            </div>
+    <!-- Transition - From Dark to Light -->
+    <section class="transition-section">
+        <h2>La Tecnología Como Puente</h2>
+        <p>La crisis ambiental no es solo un problema técnico. Es una crisis de confianza, de transparencia, de conexión. 
+        BECO transforma esta realidad usando blockchain, no como una palabra de moda, sino como una herramienta real 
+        para crear consciencia y acción colectiva.</p>
+    </section>
+
+    <!-- Citizens Section -->
+    <section class="citizens-section" id="ciudadanos">
+        <div class="section-inner">
+            <h2>Para Ti, Ciudadano</h2>
+            <p class="subtitle">Tu participación importa. Cada acción cuenta. Cada material tiene una historia.</p>
             
-            <div class="feature-card">
-                <div class="feature-icon">🔗</div>
-                <h3>Tecnología Blockchain</h3>
-                <p>Implementamos sistemas de trazabilidad inmutable que generan confianza y transparencia en toda la cadena de valor.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🎯</div>
-                <h3>Enfoque Integral</h3>
-                <p>Conectamos municipalidades, empresas y ciudadanos en un ecosistema circular que beneficia a todos los actores.</p>
+            <div class="citizen-grid">
+                <div class="citizen-card">
+                    <div class="icon">🌍</div>
+                    <h3>Sé Parte del Cambio</h3>
+                    <p>No solo reciclas: participas en un movimiento global. Cada material que depositas obtiene su identidad digital única, y tú eres parte de su historia de transformación.</p>
+                    <a href="la-crisis-del-plastico.html" class="learn-more">Conoce el problema →</a>
+                </div>
+
+                <div class="citizen-card">
+                    <div class="icon">🎮</div>
+                    <h3>Gana Eco-Tokens</h3>
+                    <p>Tu consciencia ambiental tiene recompensa. Acumula tokens por cada acción sostenible y canjéalos por beneficios reales en tu comunidad.</p>
+                    <a href="#" class="learn-more">Ver beneficios →</a>
+                </div>
+
+                <div class="citizen-card">
+                    <div class="icon">📱</div>
+                    <h3>Transparencia Total</h3>
+                    <p>¿Qué pasó con el plástico que reciclaste? Con BECO, puedes seguir el recorrido completo de tus materiales. La trazabilidad es poder.</p>
+                    <a href="blockchain-tecnologia-confianza.html" class="learn-more">¿Cómo funciona? →</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- BECO Section -->
-    <section class="beco-section" id="beco">
-        <div class="beco-content">
+    <!-- Companies Section -->
+    <section class="companies-section" id="empresas">
+        <div class="section-inner">
+            <h2>Para Tu Empresa</h2>
+            <p class="subtitle">Innovación con propósito. Cumplimiento con impacto.</p>
+            
+            <div class="company-grid">
+                <div class="company-card">
+                    <div class="icon">✅</div>
+                    <h3>Cumplimiento Ley REP Simplificado</h3>
+                    <p>La Ley 20920 requiere trazabilidad. BECO la hace posible con datos inmutables y verificables. No más reportes complejos, no más dudas. Blockchain certifica cada paso del proceso.</p>
+                    <a href="#" class="learn-more">Ver casos de uso →</a>
+                </div>
+
+                <div class="company-card">
+                    <div class="icon">🔗</div>
+                    <h3>Trazabilidad Nivel 6</h3>
+                    <p>Vamos más allá del estándar. Cada material, cada envase, cada producto tiene su NFT único. Trazabilidad individual, no solo por lotes. Esto es innovación real.</p>
+                    <a href="blockchain-tecnologia-confianza.html" class="learn-more">Entender blockchain →</a>
+                </div>
+
+                <div class="company-card">
+                    <div class="icon">💼</div>
+                    <h3>Reputación y Marketing Verde</h3>
+                    <p>Los consumidores eligen empresas conscientes. BECO te da las credenciales verificables para demostrar tu compromiso ambiental real, no greenwashing.</p>
+                    <a href="#" class="learn-more">Conoce más →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Municipalities Section -->
+    <section class="municipalities-section">
+        <div class="section-inner">
+            <h2>Para Municipalidades</h2>
+            <p class="subtitle">Transformación sistémica. Ciudades inteligentes y sostenibles.</p>
+            
+            <div class="municipality-grid">
+                <div class="municipality-card">
+                    <div class="icon">🏙️</div>
+                    <h3>EcoPlazas Inteligentes</h3>
+                    <p>Transforma espacios públicos en centros de economía circular. Puntos de reciclaje inteligentes con IoT, gamificación ciudadana, y datos en tiempo real.</p>
+                </div>
+
+                <div class="municipality-card">
+                    <div class="icon">📊</div>
+                    <h3>Datos para Decisiones</h3>
+                    <p>Gestión municipal basada en datos reales. Optimiza rutas de recolección, identifica zonas críticas, mide impacto real de políticas ambientales.</p>
+                </div>
+
+                <div class="municipality-card">
+                    <div class="icon">🤝</div>
+                    <h3>Participación Ciudadana</h3>
+                    <p>Conecta con tu comunidad. BECO crea un ecosistema donde ciudadanos, empresas y gobierno trabajan juntos hacia objetivos ambientales compartidos.</p>
+                </div>
+
+                <div class="municipality-card">
+                    <div class="icon">💰</div>
+                    <h3>Acceso a Financiamiento</h3>
+                    <p>Proyectos con datos verificables atraen inversión. BECO genera la documentación necesaria para fondos verdes nacionales e internacionales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BECO Deep Dive -->
+    <section class="beco-deep">
+        <div class="section-inner">
             <h2>BECO: Be Conscious</h2>
-            <p class="subtitle">Sistema de trazabilidad blockchain para la economía circular</p>
+            <p class="subtitle">Más que una plataforma. Un movimiento de consciencia colectiva.</p>
             
-            <div class="beco-highlight">
-                <h3>🚀 La Primera Plataforma de Trazabilidad Nivel 6 en Chile</h3>
-                <p>BECO revoluciona la gestión de residuos reciclables mediante tecnología blockchain, IoT y gamificación, permitiendo el seguimiento individual de cada material desde su origen hasta su transformación final.</p>
-            </div>
-
-            <div class="beco-features">
-                <div class="beco-feature-item">
-                    <h4>📱 NFTs de Trazabilidad</h4>
-                    <p>Cada material reciclable obtiene su identidad digital única, garantizando transparencia total en su recorrido.</p>
-                </div>
+            <div class="beco-story">
+                <h3>La Historia Detrás de la Solución</h3>
+                <p>BECO nació de una pregunta simple pero profunda: <strong>¿Y si cada material reciclable pudiera contar su historia?</strong></p>
                 
-                <div class="beco-feature-item">
-                    <h4>🎮 Eco-Tokens</h4>
-                    <p>Sistema de incentivos que premia a ciudadanos y empresas por sus acciones sostenibles.</p>
-                </div>
-                
-                <div class="beco-feature-item">
-                    <h4>📊 Cumplimiento REP</h4>
-                    <p>Facilita el cumplimiento de la Ley 20920 con datos verificables e inmutables.</p>
-                </div>
-                
-                <div class="beco-feature-item">
-                    <h4>🤖 IA & IoT</h4>
-                    <p>Sensores inteligentes y algoritmos de optimización para máxima eficiencia operacional.</p>
-                </div>
-            </div>
-
-            <div style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 10px;">
-                <h4 style="color: #2d5016; margin-bottom: 1rem;">🌍 Más allá de los residuos</h4>
-                <p>BECO es una arquitectura tecnológica escalable aplicable a múltiples sectores: agricultura, ganadería, minería, recursos hídricos y más. Nuestra visión es crear sistemas de trazabilidad que generen valor para todos los actores del ecosistema.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="servicios">
-        <h2>Nuestros Servicios</h2>
-        <p class="subtitle">Consultoría especializada en gestión ambiental e innovación tecnológica</p>
-        
-        <div class="services-list">
-            <div class="service-item">
-                <h3>🏙️ EcoPlazas</h3>
-                <p>Diseño e implementación de espacios urbanos sostenibles que integran puntos de reciclaje inteligentes y fomentan la participación ciudadana.</p>
-            </div>
-            
-            <div class="service-item">
-                <h3>♻️ Gestión de Residuos</h3>
-                <p>Asesoría integral en sistemas GRANSIC, cumplimiento normativo y optimización de procesos de recolección y clasificación.</p>
-            </div>
-            
-            <div class="service-item">
-                <h3>📋 Cumplimiento Ley REP</h3>
-                <p>Acompañamiento a empresas y municipalidades en el cumplimiento de la Ley 20920 con soluciones tecnológicas innovadoras.</p>
-            </div>
-            
-            <div class="service-item">
-                <h3>🔬 Innovación Tecnológica</h3>
-                <p>Desarrollo de pilotos y pruebas de concepto para soluciones de economía circular con blockchain, IoT y AI.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contacto">
-        <h2>Conversemos</h2>
-        <p style="margin-bottom: 2rem; font-size: 1.2rem;">¿Listo para transformar la gestión ambiental en tu organización?</p>
-        
-        <div class="contact-info">
-            <p><strong>Email:</strong> <a href="mailto:contact@gria.solutions">contact@gria.solutions</a></p>
-            <p style="margin-top: 1rem;"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/company/gria-spa" target="_blank">GRIA SpA</a></p>
-        </div>
-        
-        <div style="margin-top: 2rem;">
-            <a href="mailto:contact@gria.solutions" class="cta-button">Contáctanos</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 GRIA SpA - Gestión Resiliente de Innovación Ambiental. Todos los derechos reservados.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Impulsando la economía circular en Chile 🇨🇱</p>
-    </footer>
-</body>
-</html>
+                <p>No como un código de barras anónimo, sino como una identidad digital única que conecta a todos los actores: el ciud

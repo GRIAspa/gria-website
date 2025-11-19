@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La crisis del plástico explicada: datos, impacto y por qué la tecnología blockchain puede ser parte de la solución.">
+    <title>La Crisis del Plástico - GRIA SpA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .back-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid white;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: white;
+            color: #2d5016;
+        }
+
+        .hero-article {
+            background: linear-gradient(135deg, #1a3409 0%, #2d5016 100%);
+            color: white;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero-article h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero-article .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        article h2 {
+            color: #2d5016;
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            font-weight: 400;
+        }
+
+        article h3 {
+            color: #4a7c2c;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+        }
+
+        article p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #ffe6e6 0%, #ffcccc 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #d32f2f;
+            margin: 2rem 0;
+        }
+
+        .stat-box h3 {
+            color: #c62828;
+            margin: 0 0 1rem 0;
+        }
+
+        .stat-box p {
+            color: #555;
+            margin: 0;
+        }
+
+        .hope-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #4a7c2c;
+            margin: 2rem 0;
+        }
+
+        .hope-box h3 {
+            color: #2d5016;
+            margin: 0 0 1rem 0;
+        }
+
+        .hope-box p {
+            color: #555;
+            margin: 0;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.3rem;
+            color: #666;
+            border-left: 4px solid #4a7c2c;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #2d5016 0%, #1a3409 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 {
+            color: #66bb6a;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #66bb6a;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #4a7c2c;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 187, 106, 0.3);
+        }
+
+        footer {
+            background: #1a3409;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-article h1 {
+                font-size: 2rem;
+            }
+
+            article {
+                padding: 2rem 1.5rem;
+            }
+
+            article h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GRIA</div>
+            <a href="index.html" class="back-link">← Volver al inicio</a>
+        </nav>
+    </header>
+
+    <div class="hero-article">
+        <h1>La Crisis del Plástico</h1>
+        <p class="subtitle">Un desafío global que exige soluciones sistémicas, no solo individuales</p>
+    </div>
+
+    <article>
+        <h2>El Problema No Es El Plástico. Es La Invisibilidad.</h2>
+        
+        <p>Cada minuto, el equivalente a un camión de basura lleno de plástico llega al océano. Pero aquí está el verdadero problema: <strong>no sabemos qué pasó con el 91% del plástico que alguna vez fue reciclado</strong>.</p>
+
+        <div class="stat-box">
+            <h3>📊 Datos que Duelen</h3>
+            <p><strong>8 millones de toneladas</strong> de plástico entran a los océanos cada año</p>
+            <p><strong>91%</strong> del plástico nunca se recicla realmente</p>
+            <p><strong>50%</strong> del plástico se usa una sola vez y se desecha</p>
+            <p><strong>2050:</strong> habrá más plástico que peces en el océano (si no actuamos)</p>
+        </div>
+
+        <p>Pero estos números, aunque impactantes, no cuentan toda la historia. El plástico no es el villano. El verdadero problema es un <strong>sistema roto de confianza y trazabilidad</strong>.</p>
+
+        <h2>¿Por Qué El Reciclaje Actual No Funciona?</h2>
+
+        <h3>1. Falta de Transparencia</h3>
+        <p>Cuando depositas una botella en el contenedor de reciclaje, ¿qué pasa después? No lo sabes. No puedes saberlo. El sistema actual es una caja negra donde los materiales entran pero nadie puede seguir su recorrido.</p>
+
+        <h3>2. Incentivos Desalineados</h3>
+        <p>Los ciudadanos no tienen razón para confiar. Las empresas cumplen el mínimo regulatorio. Las municipalidades trabajan con presupuestos limitados. Nadie gana realmente excepto quienes explotan las lagunas del sistema.</p>
+
+        <h3>3. Datos Fragmentados</h3>
+        <p>Cada actor tiene su propia base de datos. ReSimple tiene la suya, las municipalidades otra, las empresas otra más. No hay una fuente única de verdad. Esto hace imposible optimizar, imposible verificar, imposible mejorar.</p>
+
+        <div class="quote">
+            "No puedes gestionar lo que no puedes medir. Y no puedes medir lo que no puedes rastrear."
+        </div>
+
+        <h2>La Crisis Real: Confianza, No Plástico</h2>
+
+        <p>Aquí está la verdad incómoda: tenemos la tecnología para reciclar. Tenemos la infraestructura. Lo que no tenemos es un <strong>sistema que genere confianza entre todos los participantes</strong>.</p>
+
+        <p>Un ciudadano recicla con diligencia, pero no sabe si realmente su esfuerzo valió la pena. Una empresa invierte en packaging sustentable, pero no puede demostrar de forma verificable que cumple. Una municipalidad implementa programas de reciclaje, pero no tiene datos precisos para optimizar.</p>
+
+        <h2>Casos en el Mundo: Cuando La Trazabilidad Funciona</h2>
+
+        <h3>🇩🇪 Alemania: El Sistema de Depósito</h3>
+        <p>Alemania recicla el 98.5% de sus botellas de plástico usando un simple sistema: pagas un depósito al comprar, lo recuperas al devolver. Simple, efectivo, pero aún limitado porque no hay trazabilidad digital del material en sí.</p>
+
+        <h3>🇳🇱 Países Bajos: Blockchain para Residuos</h3>
+        <p>Rotterdam está piloteando blockchain para rastrear residuos plásticos. Los resultados iniciales muestran 40% más de eficiencia en clasificación y 25% de reducción en contaminación de flujos de reciclaje.</p>
+
+        <h3>🇸🇪 Suecia: Importan Basura</h3>
+        <p>Suecia recicla el 99% de su basura. De hecho, importan residuos de otros países para alimentar sus plantas de energía. ¿El secreto? Trazabilidad extrema y economía circular real.</p>
+
+        <div class="hope-box">
+            <h3>💡 La Solución Existe</h3>
+            <p>Estos casos demuestran algo crucial: cuando hay trazabilidad, confianza y alineación de incentivos, el reciclaje funciona. No es utopía. Es ingeniería de sistemas.</p>
+        </div>
+
+        <h2>Chile y América Latina: Una Oportunidad Única</h2>
+
+        <p>Chile tiene la Ley REP 20920. Es progresista, ambiciosa, necesaria. Pero tiene un desafío: <strong>¿cómo verificar el cumplimiento sin un sistema de trazabilidad robusto?</strong></p>
+
+        <p>América Latina genera 541,000 toneladas de residuos plásticos diariamente. La mayoría va a rellenos sanitarios o, peor, al ambiente. Pero esta región también tiene algo único: una oportunidad de saltar directamente a sistemas de economía circular basados en tecnología, sin pasar por las ineficiencias que Europa y Norteamérica están tratando de remediar.</p>
+
+        <h2>De La Crisis a La Consciencia</h2>
+
+        <p>La crisis del plástico no se resuelve solo reciclando más. Se resuelve creando <strong>consciencia colectiva</strong> a través de:</p>
+
+        <ul style="margin: 2rem 0; padding-left: 2rem; font-size: 1.1rem;">
+            <li style="margin-bottom: 1rem;"><strong>Transparencia total:</strong> cada material rastreable desde origen hasta transformación final</li>
+            <li style="margin-bottom: 1rem;"><strong>Incentivos alineados:</strong> ciudadanos, empresas y gobiernos ganando juntos</li>
+            <li style="margin-bottom: 1rem;"><strong>Datos verificables:</strong> blockchain como fuente única de verdad</li>
+            <li style="margin-bottom: 1rem;"><strong>Participación gamificada:</strong> hacer que lo correcto también sea lo divertido</li>
+        </ul>
+
+        <p>Esto no es solo sobre plástico. Es sobre reimaginar cómo nos organizamos como sociedad para enfrentar desafíos sistémicos.</p>
+
+        <div class="cta-box">
+            <h3>BECO: La Respuesta Tecnológica a Una Crisis de Confianza</h3>
+            <p>Descubre cómo blockchain crea la infraestructura de confianza que el reciclaje necesita</p>
+            <a href="blockchain-tecnologia-confianza.html" class="cta-button">Conoce la Tecnología →</a>
+        </div>
+
+        <p style="text-align: center; margin-top: 3rem; font-style: italic; color: #666;">La crisis es real. Pero la solución también. Y comienza con consciencia.</p>
+    </article>
+
+    <footer>
+        <p>&copy; 2024 GRIA SpA - Gestión Resiliente de Innovación Ambiental</p>
+        <p style="margin-top: 0.5rem;">De la crisis a la consciencia 🌱</p>
+    </footer>
+</body>
+</html>

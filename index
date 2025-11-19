@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GRIA SpA - Gestión Resiliente de Innovación Ambiental. Soluciones de trazabilidad blockchain para economía circular y gestión de residuos en Chile.">
+    <meta name="keywords" content="GRIA, BECO, blockchain, trazabilidad, economía circular, ley REP, gestión ambiental, Chile, reciclaje, sostenibilidad">
+    <title>GRIA SpA - Gestión Resiliente de Innovación Ambiental</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a3409 0%, #2d5016 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #66bb6a;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 187, 106, 0.3);
+        }
+
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2d5016;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #2d5016;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* BECO Section */
+        .beco-section {
+            background: linear-gradient(135deg, #f5f9f3 0%, #e8f5e9 100%);
+            padding: 4rem 2rem;
+        }
+
+        .beco-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .beco-highlight {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #4a7c2c;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .beco-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .beco-feature-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-top: 3px solid #66bb6a;
+        }
+
+        .beco-feature-item h4 {
+            color: #2d5016;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Services Section */
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-item {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #4a7c2c;
+        }
+
+        .service-item h3 {
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #2d5016;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .contact-section h2 {
+            color: white;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info a {
+            color: #66bb6a;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a3409;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">GRIA SpA</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#beco">BECO</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <h1>Gestión Resiliente de Innovación Ambiental</h1>
+        <p>Transformamos la economía circular con tecnología blockchain. Soluciones inteligentes de trazabilidad para un futuro sostenible.</p>
+        <a href="#beco" class="cta-button">Conoce BECO</a>
+    </section>
+
+    <!-- About Section -->
+    <section>
+        <h2>¿Quiénes Somos?</h2>
+        <p class="subtitle">GRIA SpA es una empresa chilena pionera en la integración de tecnologías emergentes con gestión ambiental.</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🌱</div>
+                <h3>Innovación Ambiental</h3>
+                <p>Desarrollamos soluciones tecnológicas que transforman la gestión de residuos y recursos, alineadas con la Ley REP 20920 de Chile.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔗</div>
+                <h3>Tecnología Blockchain</h3>
+                <p>Implementamos sistemas de trazabilidad inmutable que generan confianza y transparencia en toda la cadena de valor.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Enfoque Integral</h3>
+                <p>Conectamos municipalidades, empresas y ciudadanos en un ecosistema circular que beneficia a todos los actores.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BECO Section -->
+    <section class="beco-section" id="beco">
+        <div class="beco-content">
+            <h2>BECO: Be Conscious</h2>
+            <p class="subtitle">Sistema de trazabilidad blockchain para la economía circular</p>
+            
+            <div class="beco-highlight">
+                <h3>🚀 La Primera Plataforma de Trazabilidad Nivel 6 en Chile</h3>
+                <p>BECO revoluciona la gestión de residuos reciclables mediante tecnología blockchain, IoT y gamificación, permitiendo el seguimiento individual de cada material desde su origen hasta su transformación final.</p>
+            </div>
+
+            <div class="beco-features">
+                <div class="beco-feature-item">
+                    <h4>📱 NFTs de Trazabilidad</h4>
+                    <p>Cada material reciclable obtiene su identidad digital única, garantizando transparencia total en su recorrido.</p>
+                </div>
+                
+                <div class="beco-feature-item">
+                    <h4>🎮 Eco-Tokens</h4>
+                    <p>Sistema de incentivos que premia a ciudadanos y empresas por sus acciones sostenibles.</p>
+                </div>
+                
+                <div class="beco-feature-item">
+                    <h4>📊 Cumplimiento REP</h4>
+                    <p>Facilita el cumplimiento de la Ley 20920 con datos verificables e inmutables.</p>
+                </div>
+                
+                <div class="beco-feature-item">
+                    <h4>🤖 IA & IoT</h4>
+                    <p>Sensores inteligentes y algoritmos de optimización para máxima eficiencia operacional.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 10px;">
+                <h4 style="color: #2d5016; margin-bottom: 1rem;">🌍 Más allá de los residuos</h4>
+                <p>BECO es una arquitectura tecnológica escalable aplicable a múltiples sectores: agricultura, ganadería, minería, recursos hídricos y más. Nuestra visión es crear sistemas de trazabilidad que generen valor para todos los actores del ecosistema.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <p class="subtitle">Consultoría especializada en gestión ambiental e innovación tecnológica</p>
+        
+        <div class="services-list">
+            <div class="service-item">
+                <h3>🏙️ EcoPlazas</h3>
+                <p>Diseño e implementación de espacios urbanos sostenibles que integran puntos de reciclaje inteligentes y fomentan la participación ciudadana.</p>
+            </div>
+            
+            <div class="service-item">
+                <h3>♻️ Gestión de Residuos</h3>
+                <p>Asesoría integral en sistemas GRANSIC, cumplimiento normativo y optimización de procesos de recolección y clasificación.</p>
+            </div>
+            
+            <div class="service-item">
+                <h3>📋 Cumplimiento Ley REP</h3>
+                <p>Acompañamiento a empresas y municipalidades en el cumplimiento de la Ley 20920 con soluciones tecnológicas innovadoras.</p>
+            </div>
+            
+            <div class="service-item">
+                <h3>🔬 Innovación Tecnológica</h3>
+                <p>Desarrollo de pilotos y pruebas de concepto para soluciones de economía circular con blockchain, IoT y AI.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section style="background: #f5f9f3; padding: 4rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2>Caso de Éxito</h2>
+            <p class="subtitle">Proyecto EcoPlazas - Valparaíso</p>
+            
+            <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                <h3 style="color: #2d5016; margin-bottom: 1rem;">Plaza Lord Cochrane: Transformación Urbana Sostenible</h3>
+                <p style="margin-bottom: 1rem;">Desarrollamos un proyecto integral de revitalización urbana que incorpora principios de economía circular y participación comunitaria. La Municipalidad de Valparaíso ha comenzado a implementar mejoras basadas en nuestras recomendaciones.</p>
+                <p><strong>Impacto:</strong> Mejora en la gestión de residuos, aumento de áreas verdes y fortalecimiento del sentido de comunidad en el sector.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contacto">
+        <h2>Conversemos</h2>
+        <p style="margin-bottom: 2rem; font-size: 1.2rem;">¿Listo para transformar la gestión ambiental en tu organización?</p>
+        
+        <div class="contact-info">
+            <p><strong>Email:</strong> <a href="mailto:contacto@gria.solutions">contacto@gria.solutions</a></p>
+            <p style="margin-top: 1rem;"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/company/gria-spa" target="_blank">GRIA SpA</a></p>
+        </div>
+        
+        <div style="margin-top: 2rem;">
+            <a href="mailto:contacto@gria.solutions" class="cta-button">Contáctanos</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 GRIA SpA - Gestión Resiliente de Innovación Ambiental. Todos los derechos reservados.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Impulsando la economía circular en Chile 🇨🇱</p>
+    </footer>
+</body>
+</html>

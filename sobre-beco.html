@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BECO: Sistema de trazabilidad blockchain para economía circular. Transformando la gestión de residuos en Chile.">
+    <title>Sobre BECO - GRIA SpA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .back-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid white;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: white;
+            color: #2d5016;
+        }
+
+        .hero-article {
+            background: linear-gradient(135deg, #1a3409 0%, #2d5016 100%);
+            color: white;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero-article h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero-article .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        article {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        article h2 {
+            color: #2d5016;
+            font-size: 2.2rem;
+            margin: 3rem 0 1.5rem;
+            font-weight: 400;
+        }
+
+        article h3 {
+            color: #4a7c2c;
+            font-size: 1.6rem;
+            margin: 2rem 0 1rem;
+        }
+
+        article p {
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #444;
+        }
+
+        .vision-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border-left: 6px solid #4a7c2c;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .vision-box h3 {
+            color: #1a3409;
+            margin: 0 0 1.5rem 0;
+            font-size: 1.8rem;
+        }
+
+        .vision-box p {
+            color: #2d5016;
+            font-size: 1.2rem;
+            line-height: 1.9;
+            margin: 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid #66bb6a;
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .benefit-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .benefit-card h4 {
+            color: #2d5016;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            font-size: 1rem;
+            color: #666;
+            margin: 0;
+        }
+
+        .stakeholder-section {
+            background: #f5f9f3;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .stakeholder-section h3 {
+            text-align: center;
+            color: #1a3409;
+            margin-bottom: 2rem;
+        }
+
+        .stakeholders {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .stakeholder-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #66bb6a;
+        }
+
+        .stakeholder-item h4 {
+            color: #2d5016;
+            margin-bottom: 0.5rem;
+        }
+
+        .stakeholder-item p {
+            font-size: 1rem;
+            color: #666;
+            margin: 0;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.4rem;
+            color: #666;
+            border-left: 5px solid #4a7c2c;
+            padding-left: 2rem;
+            margin: 3rem 0;
+        }
+
+        .impact-box {
+            background: linear-gradient(135deg, #1a3409 0%, #2d5016 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .impact-box h3 {
+            color: #66bb6a;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .impact-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .impact-box li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .impact-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #66bb6a;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            padding: 4rem 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-section h3 {
+            color: #1a3409;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #2d5016;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #4a7c2c;
+            color: white;
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(74, 124, 44, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #2d5016;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(74, 124, 44, 0.4);
+        }
+
+        footer {
+            background: #1a3409;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-article h1 {
+                font-size: 2.5rem;
+            }
+
+            article {
+                padding: 2rem 1.5rem;
+            }
+
+            .benefits-grid, .stakeholders {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GRIA</div>
+            <a href="index.html" class="back-link">← Volver al inicio</a>
+        </nav>
+    </header>
+
+    <div class="hero-article">
+        <h1>BECO</h1>
+        <p class="subtitle">Be Conscious · Sé Consciente</p>
+    </div>
+
+    <article>
+        <div class="vision-box">
+            <h3>Nuestra Visión</h3>
+            <p>BECO es más que una plataforma tecnológica. Es un movimiento hacia la consciencia colectiva, donde cada acción cuenta, cada material tiene una historia, y cada participante es parte de la transformación hacia una economía verdaderamente circular.</p>
+        </div>
+
+        <h2>¿Qué es BECO?</h2>
+        
+        <p>BECO (Be Conscious) es un <strong>sistema de trazabilidad basado en blockchain</strong> diseñado específicamente para economía circular. Conectamos a todos los actores del ecosistema de reciclaje en una plataforma transparente, verificable e incentivadora.</p>
+
+        <p>A diferencia de los sistemas tradicionales que dependen de registros manuales y confianza ciega, BECO crea una <strong>fuente única de verdad</strong> donde cada material reciclable tiene su identidad digital y cada acción es verificable.</p>
+
+        <h2>Los Pilares de BECO</h2>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <span class="icon">🔗</span>
+                <h4>Trazabilidad Total</h4>
+                <p>Seguimiento completo del ciclo de vida de materiales reciclables desde su origen hasta su transformación, usando tecnología blockchain inmutable.</p>
+            </div>
+
+            <div class="benefit-card">
+                <span class="icon">🎮</span>
+                <h4>Gamificación</h4>
+                <p>Sistema de eco-tokens que recompensa a ciudadanos por participar activamente en la economía circular. Tu consciencia ambiental tiene valor real.</p>
+            </div>
+
+            <div class="benefit-card">
+                <span class="icon">📊</span>
+                <h4>Datos en Tiempo Real</h4>
+                <p>Información verificable y actualizada instantáneamente para optimización de rutas, cumplimiento normativo y toma de decisiones.</p>
+            </div>
+
+            <div class="benefit-card">
+                <span class="icon">✅</span>
+                <h4>Cumplimiento REP Simplificado</h4>
+                <p>Facilitamos el cumplimiento de la Ley 20920 con registros automáticos, inmutables y auditables que eliminan la burocracia.</p>
+            </div>
+
+            <div class="benefit-card">
+                <span class="icon">🤝</span>
+                <h4>Ecosistema Colaborativo</h4>
+                <p>Conectamos ciudadanos, empresas, recicladores y municipalidades en una red donde todos ganan al participar.</p>
+            </div>
+
+            <div class="benefit-card">
+                <span class="icon">🌍</span>
+                <h4>Escalable y Adaptable</h4>
+                <p>Diseñado para comenzar a nivel municipal y escalar hacia cobertura nacional e internacional, aplicable a múltiples industrias.</p>
+            </div>
+        </div>
+
+        <div class="quote">
+            "No solo rastreamos materiales. Creamos consciencia colectiva sobre el impacto de cada acción individual."
+        </div>
+
+        <h2>Beneficios Para Cada Actor</h2>
+
+        <div class="stakeholder-section">
+            <h3>Un Sistema Que Beneficia a Todos</h3>
+            <div class="stakeholders">
+                <div class="stakeholder-item">
+                    <h4>👥 Ciudadanos</h4>
+                    <p>Transparencia total sobre el destino de sus materiales reciclables. Recompensas reales por participar. Empoderamiento a través de la información.</p>
+                </div>
+
+                <div class="stakeholder-item">
+                    <h4>🏢 Empresas</h4>
+                    <p>Cumplimiento REP simplificado. Certificación verificable de sostenibilidad. Reputación ambiental respaldada por datos inmutables.</p>
+                </div>
+
+                <div class="stakeholder-item">
+                    <h4>🏙️ Municipalidades</h4>
+                    <p>Optimización de operaciones con datos en tiempo real. Participación ciudadana incrementada. Acceso facilitado a financiamiento verde.</p>
+                </div>
+
+                <div class="stakeholder-item">
+                    <h4>♻️ Recicladores</h4>
+                    <p>Trazabilidad que certifica calidad de materiales. Acceso a flujos verificados. Transparencia en toda la cadena de valor.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>El Impacto de BECO</h2>
+
+        <div class="impact-box">
+            <h3>Transformación Sistémica</h3>
+            <ul>
+                <li>Aumento verificable en tasas de reciclaje</li>
+                <li>Reducción de costos operacionales para municipalidades</li>
+                <li>Eliminación del greenwashing con certificaciones blockchain</li>
+                <li>Creación de economía circular con valor distribuido</li>
+                <li>Datos confiables para políticas públicas basadas en evidencia</li>
+                <li>Participación ciudadana incentivada y medible</li>
+                <li>Cumplimiento normativo automatizado y verificable</li>
+            </ul>
+        </div>
+
+        <h2>Más Allá de los Residuos</h2>
+
+        <p>Aunque BECO nace enfocado en la gestión de residuos reciclables bajo la Ley REP, nuestra arquitectura tecnológica es aplicable a múltiples sectores donde la trazabilidad y confianza son críticas:</p>
+
+        <ul style="margin: 1.5rem 0; padding-left: 2rem; font-size: 1.1rem; line-height: 2;">
+            <li><strong>Agricultura:</strong> Trazabilidad desde semilla hasta mesa</li>
+            <li><strong>Ganadería:</strong> Certificación de origen y bienestar animal</li>
+            <li><strong>Minería:</strong> Verificación de cadenas de suministro responsables</li>
+            <li><strong>Recursos Hídricos:</strong> Monitoreo y gestión de agua</li>
+            <li><strong>Energías Renovables:</strong> Certificados de origen verde verificables</li>
+        </ul>
+
+        <p>Nuestra visión es crear una <strong>infraestructura de confianza</strong> para la economía circular en toda Latinoamérica.</p>
+
+        <h2>¿Por Qué Ahora?</h2>
+
+        <p>Chile está en un momento único. La Ley REP 20920 establece metas ambiciosas pero los sistemas actuales de verificación son insuficientes. Las municipalidades buscan soluciones innovadoras. Los ciudadanos están cada vez más conscientes. Las empresas necesitan demostrar cumplimiento real.</p>
+
+        <p><strong>BECO llega en el momento exacto</strong> donde la tecnología, la regulación, la conciencia ciudadana y la necesidad empresarial convergen.</p>
+
+        <div class="quote">
+            "No estamos inventando la rueda. Estamos usando tecnología probada para resolver un problema real de forma elegante y escalable."
+        </div>
+
+        <h2>El Viaje Recién Comienza</h2>
+
+        <p>BECO está en desarrollo activo. Estamos construyendo las bases tecnológicas, estableciendo alianzas estratégicas, y preparando proyectos piloto con municipalidades visionarias.</p>
+
+        <p>Nuestro objetivo para 2025 es demostrar que un sistema de trazabilidad blockchain para economía circular no solo es posible, sino <strong>necesario, rentable y escalable</strong>.</p>
+
+        <div class="cta-section">
+            <h3>¿Quieres Ser Parte de Esta Transformación?</h3>
+            <p>Ya seas ciudadano, empresa, municipalidad o inversionista, hay un espacio para ti en BECO.</p>
+            <a href="mailto:contact@gria.solutions" class="cta-button">Conversemos</a>
+        </div>
+
+        <p style="text-align: center; margin-top: 4rem; font-size: 1.3rem; color: #2d5016; font-weight: 300; font-style: italic;">
+            BECO: Donde la tecnología encuentra el propósito,<br>
+            y la consciencia individual se transforma en impacto colectivo.
+        </p>
+    </article>
+
+    <footer>
+        <p>&copy; 2024 GRIA SpA - Gestión Resiliente de Innovación Ambiental</p>
+        <p style="margin-top: 0.5rem;">BECO™ · Be Conscious 🌱</p>
+    </footer>
+</body>
+</html>

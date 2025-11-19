@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blockchain explicado sin tecnicismos: cómo esta tecnología crea confianza para resolver la crisis de trazabilidad en reciclaje.">
+    <title>Blockchain: La Tecnología de la Confianza - GRIA SpA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .back-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid white;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: white;
+            color: #2d5016;
+        }
+
+        .hero-article {
+            background: linear-gradient(135deg, #1a3409 0%, #2d5016 100%);
+            color: white;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero-article h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero-article .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        article h2 {
+            color: #2d5016;
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            font-weight: 400;
+        }
+
+        article h3 {
+            color: #4a7c2c;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+        }
+
+        article p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .concept-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #1976d2;
+            margin: 2rem 0;
+        }
+
+        .concept-box h3 {
+            color: #0d47a1;
+            margin: 0 0 1rem 0;
+        }
+
+        .concept-box p {
+            color: #555;
+            margin: 0.5rem 0;
+        }
+
+        .example-box {
+            background: #f5f9f3;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #66bb6a;
+            margin: 2rem 0;
+        }
+
+        .example-box h3 {
+            color: #2d5016;
+            margin: 0 0 1rem 0;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .comparison-item {
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .comparison-old {
+            background: #ffebee;
+            border-left: 4px solid #d32f2f;
+        }
+
+        .comparison-new {
+            background: #e8f5e9;
+            border-left: 4px solid #4a7c2c;
+        }
+
+        .comparison-item h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.3rem;
+            color: #666;
+            border-left: 4px solid #4a7c2c;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #2d5016 0%, #1a3409 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 {
+            color: #66bb6a;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #66bb6a;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #4a7c2c;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 187, 106, 0.3);
+        }
+
+        .visual-diagram {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .visual-diagram pre {
+            text-align: left;
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #1a3409;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-article h1 {
+                font-size: 2rem;
+            }
+
+            article {
+                padding: 2rem 1.5rem;
+            }
+
+            article h2 {
+                font-size: 1.6rem;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GRIA</div>
+            <a href="index.html" class="back-link">← Volver al inicio</a>
+        </nav>
+    </header>
+
+    <div class="hero-article">
+        <h1>Blockchain Sin Tecnicismos</h1>
+        <p class="subtitle">La tecnología que crea confianza sin intermediarios</p>
+    </div>
+
+    <article>
+        <h2>Olvidemos el Hype. Hablemos de Confianza.</h2>
+        
+        <p>Blockchain suena complicado. Suena a criptomonedas, a especulación, a algo que solo los tech bros entienden. Pero en realidad, <strong>blockchain es simple</strong>: es una forma de crear confianza entre personas que no necesariamente confían entre sí.</p>
+
+        <p>Y esa es exactamente la solución que el problema del reciclaje necesita.</p>
+
+        <h2>¿Qué Es Blockchain? (Explicado Como Si Tuvieras 10 Años)</h2>
+
+        <div class="concept-box">
+            <h3>📖 El Libro de Registro Mágico</h3>
+            <p>Imagina un cuaderno donde anotamos cada botella de plástico que se recicla. Pero este cuaderno tiene poderes mágicos:</p>
+            <p><strong>1.</strong> Todo el mundo tiene una copia del cuaderno (todos ven lo mismo)</p>
+            <p><strong>2.</strong> Nadie puede borrar lo que ya se escribió (es permanente)</p>
+            <p><strong>3.</strong> Para agregar algo nuevo, todos deben estar de acuerdo (consenso)</p>
+            <p><strong>4.</strong> Puedes verificar que todo es correcto sin confiar en nadie específico</p>
+        </div>
+
+        <p>Eso es blockchain. Un registro compartido, inmutable, descentralizado y verificable. No es magia. Es matemáticas y criptografía, pero el resultado se siente mágico.</p>
+
+        <h2>El Problema Que Blockchain Resuelve</h2>
+
+        <h3>El Sistema Actual: Confianza Centralizada</h3>
+
+        <p>Hoy, cuando reciclas, <strong>confías</strong> en que:</p>
+        <ul style="margin: 1rem 0; padding-left: 2rem; font-size: 1.1rem;">
+            <li>La municipalidad realmente recolecta lo que separaste</li>
+            <li>El camión lo lleva a donde dice que lo lleva</li>
+            <li>La planta recicladora realmente recicla (y no lo vende como chatarra)</li>
+            <li>La empresa que dice "producto reciclado" realmente usó material reciclado</li>
+        </ul>
+
+        <p>Pero <strong>no puedes verificar</strong> ninguna de estas cosas. Solo confías. Y cuando la confianza se rompe (que pasa todo el tiempo), el sistema colapsa.</p>
+
+        <div class="comparison">
+            <div class="comparison-item comparison-old">
+                <h4>❌ Sistema Tradicional</h4>
+                <p>• Bases de datos centralizadas</p>
+                <p>• Cada actor tiene su propia "verdad"</p>
+                <p>• Datos pueden alterarse</p>
+                <p>• Difícil de auditar</p>
+                <p>• Requiere confiar en intermediarios</p>
+            </div>
+            <div class="comparison-item comparison-new">
+                <h4>✅ Con Blockchain</h4>
+                <p>• Registro único compartido</p>
+                <p>• Una sola fuente de verdad</p>
+                <p>• Inmutable (no se puede cambiar)</p>
+                <p>• Transparente y auditable</p>
+                <p>• Verificación sin intermediarios</p>
+            </div>
+        </div>
+
+        <h2>Cómo BECO Usa Blockchain (Caso Real)</h2>
+
+        <div class="example-box">
+            <h3>🔄 El Viaje de Una Botella de Plástico</h3>
+            <p><strong>1. Origen (Producción):</strong></p>
+            <p>Una empresa produce 1,000 botellas PET. Cada botella recibe un NFT único (como un pasaporte digital). Esto se registra en blockchain.</p>
+            
+            <p style="margin-top: 1rem;"><strong>2. Consumo (Ciudadano):</strong></p>
+            <p>Un ciudadano compra agua. Termina de beber y la deposita en un punto BECO. Al escanearla, el sistema registra: "Botella #7482 depositada por ciudadano XYZ en Plaza Lord Cochrane, 19:30 hrs". El ciudadano gana eco-tokens.</p>
+            
+            <p style="margin-top: 1rem;"><strong>3. Recolección (Municipalidad):</strong></p>
+            <p>El camión recolector escanea el contenedor. Sistema registra: "Lote de 500 botellas recolectado, ruta verificada por GPS". Imposible decir que se recolectó si no se hizo.</p>
+            
+            <p style="margin-top: 1rem;"><strong>4. Clasificación (Planta):</strong></p>
+            <p>La planta separa por tipo de plástico. Sensores IoT verifican el proceso. Cada paso registrado en blockchain.</p>
+            
+            <p style="margin-top: 1rem;"><strong>5. Transformación (Reciclador):</strong></p>
+            <p>Las botellas se convierten en pellets de plástico. Aquí viene la magia: el NFT de "Botella #7482" se cierra, pero genera un nuevo NFT: "Pellets lote #123 - Origen certificado: 500 botellas PET". La trazabilidad continúa.</p>
+            
+            <p style="margin-top: 1rem;"><strong>6. Nueva Vida (Fabricante):</strong></p>
+            <p>Una empresa compra los pellets y hace una nueva botella. Puede demostrar, con datos inmutables, que usó material 100% reciclado. No greenwashing. Datos reales.</p>
+        </div>
+
+        <h3>El Poder de Esta Trazabilidad:</h3>
+        <p>• <strong>Ciudadano:</strong> Ve que su acción tuvo impacto real</p>
+        <p>• <strong>Municipalidad:</strong> Demuestra cumplimiento ante el MMA</p>
+        <p>• <strong>Empresa:</strong> Certifica sus claims ambientales</p>
+        <p>• <strong>Regulador:</strong> Audita sin inspecciones físicas constantes</p>
+
+        <h2>NFTs: Más Allá del Arte Digital</h2>
+
+        <p>Cuando escuchas "NFT", probablemente piensas en monitos de dibujos animados vendiéndose por millones. Olvida eso. En BECO, <strong>NFT significa "certificado digital de identidad"</strong>.</p>
+
+        <p>Cada material reciclable es único. Tiene su historia, su origen, su destino. El NFT es simplemente la forma de darle esa identidad en el mundo digital. Como un RUT, pero para objetos.</p>
+
+        <div class="visual-diagram">
+            <h3>Visualización Simplificada</h3>
+            <pre>
+BLOCKCHAIN = Cadena de Bloques
+┌─────────────┐      ┌─────────────┐      ┌─────────────┐
+│  BLOQUE 1   │ ───→ │  BLOQUE 2   │ ───→ │  BLOQUE 3   │
+│             │      │             │      │             │
+│ Botella ID  │      │ Recolección │      │ Reciclaje   │
+│ Producida   │      │ Verificada  │      │ Completado  │
+│             │      │             │      │             │
+│ Hash: 4a7f  │      │ Hash: 8b2c  │      │ Hash: 1e9d  │
+└─────────────┘      └─────────────┘      └─────────────┘
+
+Cada bloque contiene:
+• Datos del evento
+• Timestamp (cuándo pasó)
+• Hash del bloque anterior (lo enlaza)
+• Hash propio (su huella digital única)
+
+Si alguien intenta cambiar un bloque anterior,
+toda la cadena se rompe = fraude detectado.
+            </pre>
+        </div>
+
+        <h2>¿Por Qué Esto Importa Para Chile?</h2>
+
+        <p>La Ley REP 20920 exige que empresas demuestren cumplimiento en metas de reciclaje y valorización. Pero el sistema actual depende de declaraciones juradas y auditorías manuales. Es caro, lento, y fácil de manipular.</p>
+
+        <p><strong>Con blockchain:</strong> cada kilogramo reciclado es verificable automáticamente. Las empresas pueden demostrar cumplimiento en tiempo real. El MMA puede auditar con un click. Los costos de fiscalización bajan dramáticamente.</p>
+
+        <div class="quote">
+            "Blockchain no es la solución a todo. Pero es la solución exacta al problema de confianza y trazabilidad que el reciclaje enfrenta."
+        </div>
+
+        <h2>Web3: El Internet de La Participación</h2>
+
+        <p>Si blockchain es la tecnología, Web3 es la filosofía. En el internet actual (Web2), Facebook, Google, Amazon poseen tus datos y capturan todo el valor. Tú generas contenido, ellos se hacen ricos.</p>
+
+        <p><strong>Web3 invierte esto:</strong> tú eres dueño de tus datos, tú capturas valor por tu participación. En BECO:</p>
+
+        <ul style="margin: 1rem 0; padding-left: 2rem; font-size: 1.1rem;">
+            <li>Tu acción de reciclaje genera eco-tokens que TÚ controlas</li>
+            <li>Los datos de trazabilidad son públicos (transparencia) pero tu identidad es privada</li>
+            <li>No hay un "dueño" del sistema, es un protocolo abierto</li>
+            <li>El valor fluye hacia los participantes, no hacia accionistas de una corporación</li>
+        </ul>
+
+        <p>Esto es economía circular no solo de materiales, sino de valor.</p>
+
+        <h2>Los Mitos Sobre Blockchain</h2>
+
+        <h3>Mito 1: "Consume mucha energía"</h3>
+        <p><strong>Realidad:</strong> Bitcoin consume mucha energía. Las blockchains modernas como Polygon (que BECO puede usar) consumen menos energía que una búsqueda en Google. Es una cuestión de diseño, no inherente a la tecnología.</p>
+
+        <h3>Mito 2: "Es solo para especuladores"</h3>
+        <p><strong>Realidad:</strong> Las criptomonedas son UNA aplicación de blockchain. Trazabilidad de supply chains, registros médicos, sistemas de votación, identidad digital son otras. BECO usa blockchain para crear confianza, no para especular.</p>
+
+        <h3>Mito 3: "Es demasiado complejo"</h3>
+        <p><strong>Realidad:</strong> El usuario nunca ve blockchain. Igual que no "ves" el protocolo TCP/IP cuando usas internet. Solo escaneas un QR, el resto pasa en el fondo.</p>
+
+        <div class="cta-box">
+            <h3>Ahora Que Entiendes La Tecnología...</h3>
+            <p>Descubre cómo BECO la aplica para transformar la economía circular en Chile</p>
+            <a href="index.html#beco" class="cta-button">Conoce BECO →</a>
+        </div>
+
+        <p style="text-align: center; margin-top: 3rem; font-style: italic; color: #666;">
+            La tecnología es simple. La transformación que permite, profunda.
+        </p>
+    </article>
+
+    <footer>
+        <p>&copy; 2024 GRIA SpA - Gestión Resiliente de Innovación Ambiental</p>
+        <p style="margin-top: 0.5rem;">Tecnología con consciencia 🌱</p>
+    </footer>
+</body>
+</html>

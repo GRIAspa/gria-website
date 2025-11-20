@@ -126,7 +126,7 @@
             animation: fadeInUp 1.5s ease 0.5s forwards;
         }
 
-        /* Video Placeholder */
+        /* Video Container */
         .video-container {
             position: relative;
             width: 100%;
@@ -139,20 +139,6 @@
             opacity: 0;
             animation: fadeInUp 1.5s ease 1s forwards;
             box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-        }
-
-        .video-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #666;
-            font-size: 1.2rem;
         }
 
         .scroll-indicator {
@@ -498,15 +484,17 @@
             <p class="crisis-text">Cada año, 8 millones de toneladas de plástico llegan a nuestros océanos.<br>
             La crisis es real. Pero la solución también existe.</p>
             
-            <!-- Video Container -->
+            <!-- Video Container - VIDEO OCÉANOS -->
             <div class="video-container">
-                <div class="video-placeholder">
-                    🎬 [VIDEO: Comunidad Resiliente + Tecnología]<br>
-                    <small style="font-size: 0.8rem; margin-top: 1rem; display: block;">
-                    Placeholder para video de IA<br>
-                    Mostrando: Crisis → Tecnología → Transformación → Comunidad Unida
-                    </small>
-                </div>
+                <video 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                    <source src="video_oceans.mp4" type="video/mp4">
+                    Tu navegador no soporta video HTML5.
+                </video>
             </div>
         </div>
         
@@ -528,6 +516,19 @@
         <div class="section-inner">
             <h2>Para Ti, Ciudadano</h2>
             <p class="subtitle">Tu participación importa. Cada acción cuenta. Cada material tiene una historia.</p>
+            
+            <!-- Video de comunidad -->
+            <div style="max-width: 800px; margin: 2rem auto; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                <video 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                    style="width: 100%; height: auto; display: block;">
+                    <source src="video_dashboard_people.mp4" type="video/mp4">
+                    Tu navegador no soporta video HTML5.
+                </video>
+            </div>
             
             <div class="citizen-grid">
                 <div class="citizen-card">
@@ -559,6 +560,19 @@
         <div class="section-inner">
             <h2>Para Tu Empresa</h2>
             <p class="subtitle">Innovación con propósito. Cumplimiento con impacto.</p>
+            
+            <!-- Video dashboard empresarial -->
+            <div style="max-width: 900px; margin: 2rem auto; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                <video 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                    style="width: 100%; height: auto; display: block;">
+                    <source src="video_dashboard.mp4" type="video/mp4">
+                    Tu navegador no soporta video HTML5.
+                </video>
+            </div>
             
             <div class="company-grid">
                 <div class="company-card">
@@ -683,7 +697,7 @@
                 <!-- Legal -->
                 <div style="margin: 2rem 0; padding-top: 1.5rem; border-top: 1px solid #333;">
                     <p style="font-size: 0.9rem; color: #777; margin-bottom: 0.5rem;">
-                        RUT: [78.151.051-3] · Santiago, Chile
+                        RUT: 78.151.051-3 · Santiago, Chile
                     </p>
                 </div>
             </div>
@@ -691,7 +705,7 @@
             <!-- Copyright -->
             <div style="border-top: 1px solid #333; padding: 2rem 0; text-align: center;">
                 <p style="font-size: 0.9rem; color: #888; margin-bottom: 0.8rem; line-height: 1.6;">
-                    © 2025 GRIA SpA - Gestión Resiliente de Innovación Ambiental<br>
+                    © 2024-2025 GRIA SpA - Gestión Resiliente de Innovación Ambiental<br>
                     Todos los derechos reservados
                 </p>
                 <p style="font-size: 0.85rem; color: #666; margin-bottom: 1.5rem; line-height: 1.6;">

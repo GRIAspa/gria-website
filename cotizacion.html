@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solicita una cotización para servicios de consultoría ISO, cumplimiento Ley REP o Sistema BECO. GRIA SpA Chile.">
+    <title>Solicitar Cotización | GRIA SpA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gria-dark: #1a3409;
+            --gria-green: #2d5016;
+            --gria-light: #4a7c2c;
+            --gria-accent: #66bb6a;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f5f9f3;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        /* Header */
+        header {
+            background: var(--gria-dark);
+            color: white;
+            padding: 1rem 2rem;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 40px;
+        }
+
+        .logo-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: white;
+        }
+
+        .back-link {
+            color: var(--gria-accent);
+            text-decoration: none;
+        }
+
+        /* Main */
+        main {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .form-header h1 {
+            color: var(--gria-dark);
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Form */
+        .quote-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--gria-dark);
+            font-weight: 500;
+        }
+
+        .form-group label span {
+            color: #e74c3c;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gria-accent);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-light);
+            padding: 0.8rem 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .checkbox-item:hover {
+            background: #e8f5e9;
+        }
+
+        .checkbox-item input {
+            width: auto;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--gria-green);
+            color: white;
+            padding: 1.2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--gria-dark);
+            transform: translateY(-2px);
+        }
+
+        .form-note {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Info boxes */
+        .info-section {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .info-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .info-box .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box h4 {
+            color: var(--gria-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .info-box a {
+            color: var(--gria-accent);
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gria-dark);
+            color: #888;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--gria-accent);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .quote-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="logo-white.png" alt="GRIA" class="logo-img">
+                <span class="logo-name">GRIA</span>
+            </a>
+            <a href="index.html" class="back-link">← Volver al inicio</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-header">
+            <h1>Solicitar Cotización</h1>
+            <p>Cuéntanos sobre tu empresa y el servicio que necesitas. Te responderemos en menos de 24 horas hábiles.</p>
+        </div>
+
+        <form class="quote-form" action="https://formsubmit.co/ventas@gria.solutions" method="POST">
+            <!-- Configuración FormSubmit -->
+            <input type="hidden" name="_subject" value="Nueva Solicitud de Cotización - GRIA">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://gria.solutions/gracias.html">
+            
+            <!-- Datos de contacto -->
+            <h3 style="color: var(--gria-dark); margin-bottom: 1.5rem; font-size: 1.2rem;">📋 Datos de Contacto</h3>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo <span>*</span></label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="cargo">Cargo en la empresa</label>
+                    <input type="text" id="cargo" name="cargo">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email <span>*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono">
+                </div>
+            </div>
+
+            <!-- Datos de la empresa -->
+            <h3 style="color: var(--gria-dark); margin: 2rem 0 1.5rem; font-size: 1.2rem;">🏢 Sobre tu Empresa</h3>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="empresa">Nombre de la empresa <span>*</span></label>
+                    <input type="text" id="empresa" name="empresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="rubro">Rubro / Industria</label>
+                    <select id="rubro" name="rubro">
+                        <option value="">Selecciona...</option>
+                        <option value="Restaurante / Gastronomía">Restaurante / Gastronomía</option>
+                        <option value="Retail / Comercio">Retail / Comercio</option>
+                        <option value="Servicios">Servicios</option>
+                        <option value="Manufactura">Manufactura</option>
+                        <option value="Agroindustria">Agroindustria</option>
+                        <option value="Construcción">Construcción</option>
+                        <option value="Tecnología">Tecnología</option>
+                        <option value="Salud">Salud</option>
+                        <option value="Educación">Educación</option>
+                        <option value="Municipalidad / Gobierno">Municipalidad / Gobierno</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="empleados">Número de empleados</label>
+                    <select id="empleados" name="empleados">
+                        <option value="">Selecciona...</option>
+                        <option value="1-10">1 a 10</option>
+                        <option value="11-25">11 a 25</option>
+                        <option value="26-50">26 a 50</option>
+                        <option value="51-100">51 a 100</option>
+                        <option value="100+">Más de 100</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ubicacion">Ciudad / Región</label>
+                    <input type="text" id="ubicacion" name="ubicacion" placeholder="Ej: Viña del Mar, Valparaíso">
+                </div>
+            </div>
+
+            <!-- Servicios de interés -->
+            <h3 style="color: var(--gria-dark); margin: 2rem 0 1.5rem; font-size: 1.2rem;">✨ Servicios de Interés</h3>
+
+            <div class="form-group">
+                <label>¿Qué servicios te interesan? (puedes marcar varios)</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="servicios" value="ISO 9001">
+                        📋 ISO 9001
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="servicios" value="ISO 14001">
+                        🌿 ISO 14001
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="servicios" value="Ley REP">
+                        ⚖️ Ley REP
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="servicios" value="Sistema BECO">
+                        🔗 Sistema BECO
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="servicios" value="Capacitaciones">
+                        🎓 Capacitaciones
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="servicios" value="Auditoría">
+                        📊 Auditoría
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="urgencia">¿Cuándo necesitas implementar?</label>
+                <select id="urgencia" name="urgencia">
+                    <option value="">Selecciona...</option>
+                    <option value="Inmediato (1-2 meses)">Inmediato (1-2 meses)</option>
+                    <option value="Corto plazo (3-6 meses)">Corto plazo (3-6 meses)</option>
+                    <option value="Mediano plazo (6-12 meses)">Mediano plazo (6-12 meses)</option>
+                    <option value="Solo explorando">Solo estoy explorando opciones</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">Cuéntanos más sobre tu necesidad</label>
+                <textarea id="mensaje" name="mensaje" placeholder="¿Qué desafíos enfrenta tu empresa? ¿Qué esperas lograr con la certificación o consultoría? Cualquier detalle nos ayuda a preparar una propuesta más precisa..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="como_conociste">¿Cómo conociste GRIA?</label>
+                <select id="como_conociste" name="como_conociste">
+                    <option value="">Selecciona...</option>
+                    <option value="Google">Búsqueda en Google</option>
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="Recomendación">Recomendación de alguien</option>
+                    <option value="Redes sociales">Redes sociales</option>
+                    <option value="Evento">Evento o conferencia</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar Solicitud de Cotización</button>
+
+            <p class="form-note">
+                🔒 Tu información está segura. No compartimos tus datos con terceros.<br>
+                Te responderemos a tu email en menos de 24 horas hábiles.
+            </p>
+        </form>
+
+        <!-- Info adicional -->
+        <div class="info-section">
+            <div class="info-box">
+                <div class="icon">📧</div>
+                <h4>Email directo</h4>
+                <p><a href="mailto:ventas@gria.solutions">ventas@gria.solutions</a></p>
+            </div>
+            <div class="info-box">
+                <div class="icon">💬</div>
+                <h4>LinkedIn</h4>
+                <p><a href="https://www.linkedin.com/company/gria-spa" target="_blank">GRIA SpA</a></p>
+            </div>
+            <div class="info-box">
+                <div class="icon">⏰</div>
+                <h4>Respuesta</h4>
+                <p>En menos de 24 hrs hábiles</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024-2025 GRIA SpA — Gestión Resiliente de Innovación Ambiental</p>
+        <p style="margin-top: 0.5rem;"><a href="index.html">Volver al inicio</a></p>
+    </footer>
+</body>
+</html>

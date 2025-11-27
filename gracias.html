@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias! | GRIA SpA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a3409 0%, #2d5016 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 600px;
+        }
+
+        .icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: bounce 1s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            color: #66bb6a;
+            font-weight: 600;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            background: white;
+            color: #1a3409;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .social {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .social p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .social a {
+            color: #66bb6a;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">✅</div>
+        <h1>¡Gracias por contactarnos!</h1>
+        <p>Hemos recibido tu solicitud de cotización correctamente.</p>
+        <p>Nuestro equipo revisará tu información y te contactaremos a tu email en <span class="highlight">menos de 24 horas hábiles</span> con una propuesta personalizada.</p>
+        <p>Mientras tanto, puedes seguirnos en LinkedIn para conocer más sobre nuestros servicios y novedades.</p>
+        
+        <a href="index.html" class="back-btn">Volver al inicio</a>
+        
+        <div class="social">
+            <p>Síguenos en <a href="https://www.linkedin.com/company/gria-spa" target="_blank">LinkedIn</a></p>
+        </div>
+    </div>
+</body>
+</html>

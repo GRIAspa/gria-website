@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Asesoría especializada para cumplir con la Ley REP 20.920 en Chile. Planes de manejo, reportes RETC, integración con GRANSIC y tecnología blockchain para trazabilidad. GRIA SpA.">
+    <meta name="keywords" content="Ley REP, Ley 20920, responsabilidad extendida productor, Chile, envases embalajes, neumáticos, RAEE, baterías, pilas, aceites, GRANSIC, ReSimple, trazabilidad, blockchain">
+    <title>Cumplimiento Ley REP | GRIA SpA - Asesoría Especializada Chile</title>
+    <link rel="canonical" href="https://gria.solutions/servicio-ley-rep.html">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gria-dark: #1a3409;
+            --gria-green: #2d5016;
+            --gria-light: #4a7c2c;
+            --gria-accent: #66bb6a;
+            --gria-cyan: #00bcd4;
+            --rep-blue: #1565c0;
+            --rep-dark: #0d47a1;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f5f9f3;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 52, 9, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 0.8rem 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: white;
+        }
+
+        .logo-tagline {
+            font-size: 0.65rem;
+            color: var(--gria-accent);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gria-accent);
+        }
+
+        /* Hero */
+        .service-hero {
+            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #1976d2 100%);
+            color: white;
+            padding: 8rem 2rem 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(102, 187, 106, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .service-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .service-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .service-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Alerta de importancia */
+        .alert-section {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 2rem;
+            border-left: 5px solid #ff9800;
+        }
+
+        .alert-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .alert-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .alert-content h3 {
+            color: #e65100;
+            margin-bottom: 0.5rem;
+        }
+
+        .alert-content p {
+            color: #bf360c;
+            font-size: 0.95rem;
+        }
+
+        /* Contenido Principal */
+        .content-section {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            color: var(--gria-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .content-section p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+
+        /* Productos Prioritarios */
+        .products-section {
+            background: var(--bg-light);
+            padding: 5rem 2rem;
+        }
+
+        .products-section h2 {
+            text-align: center;
+            color: var(--gria-dark);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .products-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-card h4 {
+            color: var(--gria-dark);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card .status {
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .status.active {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status.soon {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+
+        /* Obligaciones */
+        .obligations-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .obligations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .obligation-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--rep-blue);
+        }
+
+        .obligation-card h3 {
+            color: var(--rep-blue);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .obligation-card ul {
+            list-style: none;
+        }
+
+        .obligation-card li {
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .obligation-card li::before {
+            content: '→';
+            color: var(--gria-accent);
+            margin-right: 0.5rem;
+        }
+
+        /* Sanciones */
+        .sanctions-section {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            padding: 4rem 2rem;
+        }
+
+        .sanctions-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .sanctions-inner h2 {
+            color: #c62828;
+            margin-bottom: 1.5rem;
+        }
+
+        .sanctions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .sanction-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .sanction-card h4 {
+            color: #c62828;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sanction-card .amount {
+            font-size: 1.5rem;
+            color: #b71c1c;
+            font-weight: bold;
+        }
+
+        .sanction-card p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        /* Nuestro servicio */
+        .service-detail-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .service-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .service-detail-card {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-top: 4px solid var(--gria-accent);
+        }
+
+        .service-detail-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-detail-card h3 {
+            color: var(--gria-dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-detail-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* BECO Connection */
+        .beco-section {
+            background: linear-gradient(135deg, var(--gria-dark) 0%, #1a1a1a 100%);
+            color: white;
+            padding: 5rem 2rem;
+        }
+
+        .beco-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .beco-content h2 {
+            color: var(--gria-accent);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .beco-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .beco-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .beco-feature {
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(102, 187, 106, 0.3);
+        }
+
+        .beco-logo {
+            text-align: center;
+        }
+
+        .beco-logo-text {
+            font-size: 5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--gria-accent), var(--gria-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .beco-logo p {
+            font-size: 1.2rem;
+            opacity: 0.7;
+            margin-top: 0.5rem;
+        }
+
+        .beco-btn {
+            display: inline-block;
+            background: var(--gria-accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .beco-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 187, 106, 0.4);
+        }
+
+        /* Casos Internacionales */
+        .cases-section {
+            background: #f5f5f5;
+            padding: 5rem 2rem;
+        }
+
+        .cases-section h2 {
+            text-align: center;
+            color: var(--gria-dark);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .cases-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .case-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .case-card .country {
+            font-size: 0.8rem;
+            color: var(--rep-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-card h4 {
+            color: var(--gria-dark);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .case-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .case-source {
+            font-size: 0.8rem;
+            color: #999;
+            font-style: italic;
+        }
+
+        /* Precios */
+        .pricing-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .pricing-section h2 {
+            text-align: center;
+            color: var(--gria-dark);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border: 3px solid var(--rep-blue);
+            background: white;
+        }
+
+        .pricing-card.featured::before {
+            content: 'Más Solicitado';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--rep-blue);
+            color: white;
+            padding: 0.3rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .pricing-card h3 {
+            color: var(--gria-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            color: var(--rep-blue);
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+
+        .pricing-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 0.95rem;
+        }
+
+        .pricing-card li::before {
+            content: '✓';
+            color: var(--gria-accent);
+            margin-right: 0.5rem;
+        }
+
+        .pricing-btn {
+            display: inline-block;
+            background: var(--rep-blue);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .pricing-btn:hover {
+            background: var(--rep-dark);
+            transform: translateY(-3px);
+        }
+
+        /* CTA */
+        .quote-cta {
+            background: linear-gradient(135deg, var(--rep-blue) 0%, var(--rep-dark) 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .quote-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .quote-cta p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .quote-btn {
+            display: inline-block;
+            background: white;
+            color: var(--rep-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .quote-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: #888;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--gria-accent);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .service-hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .alert-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .sanctions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .beco-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .pricing-card.featured::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="logo-white.png" alt="GRIA SpA" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-name">GRIA</span>
+                    <span class="logo-tagline">Environment & Innovation</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="service-hero">
+        <div class="service-hero-content">
+            <span class="service-badge">⚖️ Ley 20.920 - Responsabilidad Extendida del Productor</span>
+            <h1>Cumplimiento Ley REP</h1>
+            <p>Asesoría especializada para cumplir con la Ley de Responsabilidad Extendida del Productor. Te guiamos desde el diagnóstico hasta la operación con los sistemas de gestión, integrando tecnología para trazabilidad verificable.</p>
+        </div>
+    </section>
+
+    <!-- Alerta -->
+    <section class="alert-section">
+        <div class="alert-inner">
+            <div class="alert-icon">⚠️</div>
+            <div class="alert-content">
+                <h3>Las metas de reciclaje ya están vigentes</h3>
+                <p>El Decreto 12 establece metas progresivas de recolección y valorización para envases y embalajes. Las empresas que no cumplan enfrentan multas de hasta 10.000 UTA (aproximadamente $7.500 millones CLP). No esperes a la fiscalización.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qué es la Ley REP -->
+    <section class="content-section">
+        <h2>¿Qué es la Ley REP y a quién aplica?</h2>
+        <p>La <strong>Ley 20.920</strong>, conocida como Ley REP (Responsabilidad Extendida del Productor), establece que los productores son responsables de la gestión de los residuos de los productos que introducen al mercado chileno, durante todo su ciclo de vida.</p>
+        
+        <p>Esto significa que si tu empresa <strong>fabrica, importa o comercializa</strong> productos prioritarios, debes:</p>
+        
+        <ul style="margin: 1.5rem 0; padding-left: 2rem;">
+            <li style="margin-bottom: 0.8rem;">Inscribirte en el Registro de Emisiones y Transferencias de Contaminantes (RETC)</li>
+            <li style="margin-bottom: 0.8rem;">Adherirte a un Sistema de Gestión autorizado (como GRANSIC)</li>
+            <li style="margin-bottom: 0.8rem;">Cumplir con las metas de recolección y valorización establecidas</li>
+            <li style="margin-bottom: 0.8rem;">Reportar anualmente la información requerida</li>
+            <li style="margin-bottom: 0.8rem;">Financiar la gestión de los residuos de tus productos</li>
+        </ul>
+        
+        <p>La ley busca <strong>disminuir la generación de residuos y fomentar su valorización</strong>, aplicando el principio de "el que contamina paga" y promoviendo la economía circular en Chile.</p>
+    </section>
+
+    <!-- Productos Prioritarios -->
+    <section class="products-section">
+        <h2>Productos Prioritarios</h2>
+        <p class="products-subtitle">La Ley REP establece 6 categorías de productos prioritarios. Te ayudamos con todos ellos.</p>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="icon">📦</div>
+                <h4>Envases y Embalajes</h4>
+                <span class="status active">Metas Vigentes</span>
+            </div>
+            
+            <div class="product-card">
+                <div class="icon">🛞</div>
+                <h4>Neumáticos</h4>
+                <span class="status active">Metas Vigentes</span>
+            </div>
+            
+            <div class="product-card">
+                <div class="icon">🛢️</div>
+                <h4>Aceites Lubricantes</h4>
+                <span class="status active">Metas Vigentes</span>
+            </div>
+            
+            <div class="product-card">
+                <div class="icon">💻</div>
+                <h4>Aparatos Eléctricos (RAEE)</h4>
+                <span class="status active">Metas Vigentes</span>
+            </div>
+            
+            <div class="product-card">
+                <div class="icon">🔋</div>
+                <h4>Baterías</h4>
+                <span class="status active">Metas Vigentes</span>
+            </div>
+            
+            <div class="product-card">
+                <div class="icon">🪫</div>
+                <h4>Pilas</h4>
+                <span class="status active">Metas Vigentes</span>
+            </div>
+            
+            <div class="product-card">
+                <div class="icon">👕</div>
+                <h4>Textiles</h4>
+                <span class="status soon">Próximamente</span>
+            </div>
+            
+            <div class="product-card">
+                <div class="icon">🥬</div>
+                <h4>Orgánicos</h4>
+                <span class="status soon">Próximamente</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Obligaciones -->
+    <section class="obligations-section">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <h2 style="text-align: center; color: var(--gria-dark); margin-bottom: 3rem; font-size: 2rem;">Obligaciones según la Ley</h2>
+            
+            <div class="obligations-grid">
+                <div class="obligation-card">
+                    <h3>📝 Para Productores</h3>
+                    <ul>
+                        <li>Inscribirse en el RETC</li>
+                        <li>Adherirse a un Sistema de Gestión (GRANSIC)</li>
+                        <li>Cumplir metas de recolección y valorización</li>
+                        <li>Financiar la gestión de residuos</li>
+                        <li>Reportar información anualmente</li>
+                        <li>Implementar estrategias de ecodiseño</li>
+                    </ul>
+                </div>
+                
+                <div class="obligation-card">
+                    <h3>🏪 Para Comercializadores</h3>
+                    <ul>
+                        <li>Aceptar devolución de residuos sin costo</li>
+                        <li>Establecer puntos de recepción (según superficie)</li>
+                        <li>Entregar residuos al Sistema de Gestión</li>
+                        <li>No vender productos de productores no adheridos</li>
+                        <li>Informar a consumidores sobre puntos de entrega</li>
+                    </ul>
+                </div>
+                
+                <div class="obligation-card">
+                    <h3>🏛️ Para Municipalidades</h3>
+                    <ul>
+                        <li>Incorporar separación en origen en ordenanzas</li>
+                        <li>Celebrar convenios con Sistemas de Gestión</li>
+                        <li>Facilitar instalaciones de recepción</li>
+                        <li>Promover educación ambiental</li>
+                        <li>Colaborar con recicladores de base</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sanciones -->
+    <section class="sanctions-section">
+        <div class="sanctions-inner">
+            <h2>⚠️ Sanciones por Incumplimiento</h2>
+            <p>La Superintendencia del Medio Ambiente fiscaliza y sanciona. Las multas son significativas:</p>
+            
+            <div class="sanctions-grid">
+                <div class="sanction-card">
+                    <h4>Infracciones Gravísimas</h4>
+                    <div class="amount">Hasta 10.000 UTA</div>
+                    <p>~$7.500 millones CLP</p>
+                </div>
+                <div class="sanction-card">
+                    <h4>Infracciones Graves</h4>
+                    <div class="amount">Hasta 5.000 UTA</div>
+                    <p>~$3.750 millones CLP</p>
+                </div>
+                <div class="sanction-card">
+                    <h4>Infracciones Leves</h4>
+                    <div class="amount">Hasta 1.000 UTA</div>
+                    <p>~$750 millones CLP</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 2rem; font-size: 0.95rem;">No inscribirse, no tener Sistema de Gestión, o entregar información falsa son infracciones gravísimas.</p>
+        </div>
+    </section>
+
+    <!-- Nuestro Servicio -->
+    <section class="service-detail-section">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <h2 style="text-align: center; color: var(--gria-dark); margin-bottom: 3rem; font-size: 2rem;">Cómo Te Ayudamos</h2>
+            
+            <div class="service-detail-grid">
+                <div class="service-detail-card">
+                    <div class="icon">🔍</div>
+                    <h3>Diagnóstico de Cumplimiento</h3>
+                    <p>Evaluamos tu situación actual frente a la Ley REP. Identificamos productos afectados, brechas de cumplimiento y riesgos. Te entregamos un roadmap claro de acciones.</p>
+                </div>
+                
+                <div class="service-detail-card">
+                    <div class="icon">📋</div>
+                    <h3>Inscripción RETC</h3>
+                    <p>Te guiamos en el proceso de inscripción en el Registro de Emisiones y Transferencias de Contaminantes. Preparamos toda la documentación necesaria.</p>
+                </div>
+                
+                <div class="service-detail-card">
+                    <div class="icon">🤝</div>
+                    <h3>Adhesión a GRANSIC</h3>
+                    <p>Te asesoramos en la selección y adhesión al Sistema de Gestión más adecuado (ReSimple, otros). Negociamos términos y gestionamos el proceso completo.</p>
+                </div>
+                
+                <div class="service-detail-card">
+                    <div class="icon">📊</div>
+                    <h3>Reportes y Declaraciones</h3>
+                    <p>Preparamos y gestionamos tus reportes anuales al RETC. Aseguramos que la información sea precisa, completa y entregada a tiempo.</p>
+                </div>
+                
+                <div class="service-detail-card">
+                    <div class="icon">🎯</div>
+                    <h3>Plan de Cumplimiento de Metas</h3>
+                    <p>Diseñamos estrategias para alcanzar las metas de recolección y valorización. Optimizamos costos y maximizamos eficiencia en la gestión.</p>
+                </div>
+                
+                <div class="service-detail-card">
+                    <div class="icon">🔗</div>
+                    <h3>Trazabilidad con Tecnología</h3>
+                    <p>Implementamos soluciones de trazabilidad con blockchain e IoT para demostrar cumplimiento verificable. Datos inmutables para auditorías y fiscalizaciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BECO Connection -->
+    <section class="beco-section">
+        <div class="beco-inner">
+            <div class="beco-content">
+                <h2>El Futuro del Cumplimiento: Sistema BECO</h2>
+                <p>La Ley REP exige trazabilidad y reportes verificables. Pero, ¿cómo demuestras que realmente cumples? ¿Cómo evitas el greenwashing?</p>
+                <p><strong>BECO</strong> (Be Conscious) es nuestro sistema de trazabilidad blockchain que lleva el cumplimiento REP al siguiente nivel: cada residuo gestionado queda registrado de forma inmutable, verificable por cualquier auditor o autoridad.</p>
+                
+                <div class="beco-features">
+                    <span class="beco-feature">🔗 Blockchain Polygon zkEVM</span>
+                    <span class="beco-feature">📡 Sensores IoT</span>
+                    <span class="beco-feature">🎮 Gamificación</span>
+                    <span class="beco-feature">📱 Apps Conectadas</span>
+                    <span class="beco-feature">🏆 NFTs de Certificación</span>
+                </div>
+                
+                <a href="servicio-beco.html" class="beco-btn">Conocer Sistema BECO →</a>
+            </div>
+            
+            <div class="beco-logo">
+                <div class="beco-logo-text">BECO</div>
+                <p>Be Conscious — Sé Consciente</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Casos Internacionales -->
+    <section class="cases-section">
+        <h2>Innovación Global en Leyes EPR</h2>
+        <p class="cases-subtitle">Empresas y gobiernos alrededor del mundo están usando tecnología para cumplir con leyes de responsabilidad extendida</p>
+        
+        <div class="cases-grid">
+            <div class="case-card">
+                <div class="country">🇿🇦 Sudáfrica</div>
+                <h4>Ardagh Glass + BanQu</h4>
+                <p>Implementaron blockchain para trazabilidad completa del vidrio reciclado, incluyendo a recicladores informales en la cadena. Logran cumplimiento EPR verificable con pagos automatizados.</p>
+                <span class="case-source">Fuente: BanQu</span>
+            </div>
+            
+            <div class="case-card">
+                <div class="country">🇪🇺 Unión Europea</div>
+                <h4>Pasaporte Digital de Productos</h4>
+                <p>Para 2030, la UE exigirá que cada producto tenga un "gemelo digital" verificable. Blockchain es la arquitectura de confianza para esta trazabilidad a escala continental.</p>
+                <span class="case-source">Fuente: World Economic Forum</span>
+            </div>
+            
+            <div class="case-card">
+                <div class="country">🇪🇸 España</div>
+                <h4>HEURA + SigneBlock (Agricultura)</h4>
+                <p>Primera consultora ambiental en aplicar blockchain para trazabilidad de envases agrícolas bajo esquemas SCRAP. Control completo desde generación hasta reciclaje.</p>
+                <span class="case-source">Fuente: SigneBlock</span>
+            </div>
+            
+            <div class="case-card">
+                <div class="country">🇪🇸 España / LATAM</div>
+                <h4>TEIMAS + Telefónica</h4>
+                <p>Plataforma CADENA usa blockchain para trazabilidad de residuos corporativos. Implementado en todos los países donde Telefónica opera, demostrando cumplimiento EPR transfronterizo.</p>
+                <span class="case-source">Fuente: TEIMAS / TrustOS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Precios -->
+    <section class="pricing-section">
+        <h2 style="font-size: 2rem;">Planes de Asesoría Ley REP</h2>
+        <p class="pricing-subtitle">Soluciones adaptadas al tamaño de tu empresa y complejidad de productos.</p>
+        
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Diagnóstico</h3>
+                <p style="color: var(--text-light); font-size: 0.9rem;">Evaluación inicial de cumplimiento</p>
+                <div class="price">$500.000 <span>CLP</span></div>
+                <ul>
+                    <li>Análisis de productos afectados</li>
+                    <li>Evaluación de brechas de cumplimiento</li>
+                    <li>Identificación de riesgos y sanciones</li>
+                    <li>Roadmap de acciones prioritarias</li>
+                    <li>Informe ejecutivo para directivos</li>
+                </ul>
+                <a href="cotizacion.html" class="pricing-btn">Solicitar</a>
+            </div>
+            
+            <div class="pricing-card featured">
+                <h3>Cumplimiento Integral</h3>
+                <p style="color: var(--text-light); font-size: 0.9rem;">Todo lo necesario para cumplir</p>
+                <div class="price">$1.800.000 <span>CLP</span></div>
+                <ul>
+                    <li>Diagnóstico completo incluido</li>
+                    <li>Inscripción y gestión RETC</li>
+                    <li>Asesoría adhesión a GRANSIC</li>
+                    <li>Preparación de reportes anuales</li>
+                    <li>Plan de cumplimiento de metas</li>
+                    <li>Capacitación del equipo (8 hrs)</li>
+                    <li>Soporte 6 meses</li>
+                </ul>
+                <a href="cotizacion.html" class="pricing-btn">Solicitar</a>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Premium + BECO</h3>
+                <p style="color: var(--text-light); font-size: 0.9rem;">Cumplimiento con trazabilidad blockchain</p>
+                <div class="price">Personalizado</div>
+                <ul>
+                    <li>Todo lo del plan Integral</li>
+                    <li>Implementación Sistema BECO</li>
+                    <li>Trazabilidad blockchain de residuos</li>
+                    <li>Dashboard tiempo real</li>
+                    <li>Reportes automatizados</li>
+                    <li>Certificación digital verificable</li>
+                    <li>Soporte prioritario 12 meses</li>
+                </ul>
+                <a href="cotizacion.html" class="pricing-btn">Contactar</a>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 2rem; color: var(--text-light); font-size: 0.9rem;">
+            * Precios referenciales. El costo final depende del número de productos prioritarios, volumen y complejidad.<br>
+            * Ofrecemos descuentos para clientes que también implementen ISO 14001 con nosotros.
+        </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="quote-cta">
+        <h2 style="font-size: 2rem;">No esperes a la fiscalización</h2>
+        <p>La Superintendencia del Medio Ambiente ya está fiscalizando. Asegura tu cumplimiento hoy y evita multas millonarias.</p>
+        <a href="cotizacion.html" class="quote-btn">Solicitar Asesoría</a>
+        
+        <div style="margin-top: 3rem;">
+            <p style="font-size: 0.95rem; opacity: 0.8;">¿Tienes dudas sobre si tu empresa está afecta?</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="mailto:ventas@gria.solutions" style="color: var(--gria-accent);">ventas@gria.solutions</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024-2025 GRIA SpA — Gestión Resiliente de Innovación Ambiental</p>
+        <p style="margin-top: 0.5rem;"><a href="index.html">Volver al inicio</a> · <a href="index.html#servicios">Ver todos los servicios</a></p>
+    </footer>
+</body>
+</html>

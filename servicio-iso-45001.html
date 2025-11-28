@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consultoría ISO 45001 - Sistema de Gestión de Seguridad y Salud en el Trabajo. Protege a tu equipo y cumple la normativa. GRIA SpA Chile.">
+    <meta name="keywords" content="ISO 45001, seguridad laboral, salud ocupacional, prevención de riesgos, Chile, sistema gestión, GRIA">
+    <title>Consultoría ISO 45001 | GRIA SpA - Seguridad y Salud en el Trabajo</title>
+    <link rel="canonical" href="https://gria.solutions/servicio-iso-45001.html">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gria-dark: #1a3409;
+            --gria-green: #2d5016;
+            --gria-light: #4a7c2c;
+            --gria-accent: #66bb6a;
+            --safety-orange: #ff6d00;
+            --safety-dark: #e65100;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f5f9f3;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 52, 9, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 0.8rem 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: white;
+        }
+
+        .logo-tagline {
+            font-size: 0.65rem;
+            color: var(--gria-accent);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gria-accent);
+        }
+
+        /* Hero */
+        .service-hero {
+            background: linear-gradient(135deg, #e65100 0%, #ff6d00 50%, #ff9100 100%);
+            color: white;
+            padding: 8rem 2rem 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(102, 187, 106, 0.1) 0%, transparent 50%);
+        }
+
+        .service-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .service-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .service-hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Contenido Principal */
+        .content-section {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            color: var(--gria-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .content-section p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+
+        /* Beneficios */
+        .benefits-section {
+            background: var(--bg-light);
+            padding: 5rem 2rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            color: var(--gria-dark);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .benefit-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Sistema Integrado */
+        .integrated-section {
+            background: linear-gradient(135deg, var(--gria-dark) 0%, #0d1f0a 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .integrated-section h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .integrated-section p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .integrated-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .integrated-badge {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .integrated-badge .icon {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .integrated-badge span {
+            font-size: 0.9rem;
+        }
+
+        /* Red de Aliados */
+        .alliance-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .alliance-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .alliance-inner h2 {
+            color: var(--gria-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .alliance-inner p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .alliance-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid var(--safety-orange);
+            text-align: left;
+            margin-top: 2rem;
+        }
+
+        .alliance-box h4 {
+            color: var(--safety-dark);
+            margin-bottom: 1rem;
+        }
+
+        .alliance-box p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--safety-orange) 0%, var(--safety-dark) 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: var(--safety-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: #888;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--gria-accent);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .service-hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .integrated-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="logo-white.png" alt="GRIA SpA" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-name">GRIA</span>
+                    <span class="logo-tagline">Environment & Innovation</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="service-hero">
+        <div class="service-hero-content">
+            <span class="service-badge">🛡️ Sistema de Gestión de Seguridad y Salud</span>
+            <h1>Consultoría ISO 45001:2018</h1>
+            <p>Protege lo más valioso de tu organización: las personas. Implementamos Sistemas de Gestión de Seguridad y Salud en el Trabajo que van más allá del cumplimiento, creando una cultura de prevención y bienestar.</p>
+        </div>
+    </section>
+
+    <!-- Qué es ISO 45001 -->
+    <section class="content-section">
+        <h2>¿Qué es ISO 45001 y por qué es esencial?</h2>
+        <p>ISO 45001:2018 es el estándar internacional para Sistemas de Gestión de Seguridad y Salud en el Trabajo (SST). Proporciona un marco para <strong>prevenir lesiones, enfermedades laborales y crear entornos de trabajo seguros</strong> para todos.</p>
+        
+        <p>En Chile, la seguridad laboral no es solo una obligación legal —regulada por la Ley 16.744 y el DS 594—, sino un imperativo ético. Un ambiente de trabajo seguro mejora la productividad, reduce costos por accidentes y fortalece el compromiso de los colaboradores.</p>
+        
+        <p>ISO 45001 comparte la estructura de alto nivel con ISO 9001 e ISO 14001, lo que permite integrar los tres sistemas en un <strong>Sistema de Gestión Integrado (SGI)</strong> eficiente y coherente.</p>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="benefits-section">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <h2 style="text-align: center; color: var(--gria-dark); margin-bottom: 3rem; font-size: 2rem;">Beneficios de Implementar ISO 45001</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">👥</div>
+                    <h3>Protección del Equipo</h3>
+                    <p>Reduce accidentes y enfermedades laborales. Demuestra compromiso real con el bienestar de tus colaboradores.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon">⚖️</div>
+                    <h3>Cumplimiento Legal</h3>
+                    <p>Asegura conformidad con la Ley 16.744, DS 594 y toda la normativa chilena de seguridad laboral.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon">💰</div>
+                    <h3>Reducción de Costos</h3>
+                    <p>Menos accidentes significa menos licencias, menos primas de seguro y menos interrupciones operativas.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon">🏆</div>
+                    <h3>Ventaja Competitiva</h3>
+                    <p>Muchas licitaciones y contratos (especialmente en minería e industria) exigen certificación ISO 45001.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon">🔄</div>
+                    <h3>Mejora Continua</h3>
+                    <p>Cultura de prevención que evoluciona constantemente con filosofía Kaizen.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon">🤝</div>
+                    <h3>Clima Laboral</h3>
+                    <p>Trabajadores que se sienten seguros son más comprometidos, productivos y leales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sistema Integrado -->
+    <section class="integrated-section">
+        <h2 style="font-size: 2rem;">Sistema de Gestión Integrado</h2>
+        <p>ISO 45001 se integra perfectamente con los demás sistemas de gestión. Un SGI unifica calidad, ambiente y seguridad en un solo sistema coherente, reduciendo duplicidades y optimizando recursos.</p>
+        
+        <div class="integrated-badges">
+            <div class="integrated-badge">
+                <span class="icon">📋</span>
+                <span>ISO 9001<br>Calidad</span>
+            </div>
+            <div class="integrated-badge">
+                <span class="icon">🌿</span>
+                <span>ISO 14001<br>Ambiente</span>
+            </div>
+            <div class="integrated-badge">
+                <span class="icon">🛡️</span>
+                <span>ISO 45001<br>Seguridad</span>
+            </div>
+            <div class="integrated-badge" style="background: var(--gria-accent); border-color: var(--gria-accent);">
+                <span class="icon">✨</span>
+                <span>SGI<br>Integrado</span>
+            </div>
+        </div>
+        
+        <p style="margin-top: 2rem; font-size: 0.95rem; opacity: 0.8;">Descuento del 20% al implementar Sistema de Gestión Integrado (2 o más normas)</p>
+    </section>
+
+    <!-- Red de Aliados -->
+    <section class="alliance-section">
+        <div class="alliance-inner">
+            <h2>Nuestro Enfoque</h2>
+            <p>En GRIA trabajamos con una red de profesionales especializados en prevención de riesgos que comparten nuestra visión de mejora continua y compromiso con la excelencia.</p>
+            <p>Esto nos permite ofrecerte implementaciones de ISO 45001 con el rigor técnico que exige la normativa, combinado con el enfoque innovador y tecnológico que caracteriza a GRIA.</p>
+            
+            <div class="alliance-box">
+                <h4>💡 Nuestro diferenciador</h4>
+                <p>No solo implementamos el sistema: lo conectamos con herramientas digitales para gestión de incidentes, capacitaciones con tecnología innovadora y dashboards de indicadores en tiempo real. Seguridad laboral con la misma filosofía de transparencia y mejora continua que aplicamos en todo lo que hacemos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2 style="font-size: 2rem;">Protege a tu equipo, fortalece tu empresa</h2>
+        <p>Solicita una evaluación inicial sin costo. Analizamos tu situación actual y te proponemos el mejor camino hacia un ambiente de trabajo seguro.</p>
+        <a href="cotizacion.html" class="cta-btn">Solicitar Evaluación</a>
+        
+        <div style="margin-top: 3rem;">
+            <p style="font-size: 0.95rem; opacity: 0.9;">¿Prefieres conversar primero?</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="mailto:ventas@gria.solutions" style="color: white;">ventas@gria.solutions</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024-2025 GRIA SpA — Gestión Resiliente de Innovación Ambiental</p>
+        <p style="margin-top: 0.5rem;"><a href="index.html">Volver al inicio</a> · <a href="index.html#servicios">Ver todos los servicios</a></p>
+    </footer>
+</body>
+</html>

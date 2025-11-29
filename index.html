@@ -345,7 +345,8 @@
             text-align: center;
         }
 
-        .about-grid {
+        /* Parte 1: Intro con logo */
+        .about-intro {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
@@ -353,16 +354,80 @@
             margin-top: 3rem;
         }
 
-        .about-content h3 {
+        .about-intro-text h3 {
             color: var(--gria-green);
             font-size: 1.8rem;
             margin-bottom: 1rem;
             font-weight: 400;
         }
 
-        .about-content p {
+        .about-intro-text p {
             margin-bottom: 1.5rem;
             color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .about-intro-image {
+            text-align: center;
+        }
+
+        .about-intro-image img {
+            max-width: 280px;
+            filter: drop-shadow(0 10px 30px rgba(45, 80, 22, 0.2));
+        }
+
+        /* Parte 2: Visión, Misión, Propósito */
+        .about-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .pillar-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--gria-accent);
+            transition: transform 0.3s;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pillar-card .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .pillar-card h4 {
+            color: var(--gria-dark);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .pillar-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Parte 3: Cierre e invitación */
+        .about-closing {
+            text-align: center;
+            margin-top: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-closing p {
+            font-style: italic;
+            color: var(--gria-dark);
+            font-size: 1.1rem;
             line-height: 1.8;
         }
 
@@ -370,7 +435,8 @@
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
+            justify-content: center;
         }
 
         .value-tag {
@@ -380,15 +446,6 @@
             border-radius: 20px;
             font-size: 0.85rem;
             border: 1px solid var(--gria-accent);
-        }
-
-        .about-image {
-            text-align: center;
-        }
-
-        .about-image img {
-            max-width: 300px;
-            filter: drop-shadow(0 10px 30px rgba(45, 80, 22, 0.2));
         }
 
         /* ==================== SERVICIOS ==================== */
@@ -791,13 +848,17 @@
                 display: none;
             }
 
-            .about-grid {
+            .about-intro {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
 
-            .about-image {
+            .about-intro-image {
                 order: -1;
+            }
+
+            .about-pillars {
+                grid-template-columns: 1fr;
             }
 
             h2 {
@@ -873,34 +934,53 @@
             <h2>Sobre GRIA SpA</h2>
             <p class="subtitle">Gestión Resiliente de Innovación Ambiental</p>
             
-            <div class="about-grid">
-                <div class="about-content">
+            <!-- Parte 1: Intro con logo -->
+            <div class="about-intro">
+                <div class="about-intro-text">
                     <h3>Consciencia en Acción</h3>
                     <p>El cambio real ocurre cuando consciencia y acción se encuentran. Cada decisión —de una empresa, una comunidad, una persona— es parte de un sistema mayor. Y cuando ese sistema funciona con transparencia, tecnología y propósito compartido, lo que antes parecía un desafío se transforma en oportunidad.</p>
                     
                     <p>GRIA nace de esa convicción. Somos una consultora chilena especializada en gestión ambiental, sistemas de calidad, seguridad laboral y soluciones tecnológicas para la sostenibilidad. Acompañamos a organizaciones de todos los tamaños en su camino hacia el cumplimiento normativo, la eficiencia operativa y la mejora continua.</p>
                     
                     <p><strong>Lo que hacemos:</strong> Implementamos Sistemas de Gestión de Calidad (ISO 9001), Gestión Ambiental (ISO 14001) y Seguridad y Salud en el Trabajo (ISO 45001), de forma individual o como Sistema de Gestión Integrado. Asesoramos en el cumplimiento de la Ley REP y la integración con sistemas como GRANSIC. Desarrollamos soluciones de trazabilidad con tecnologías emergentes —blockchain, IoT, inteligencia artificial— y capacitamos equipos para que la sostenibilidad sea parte de la cultura, no solo del cumplimiento.</p>
-                    
-                    <p><strong>Nuestra visión:</strong> Un futuro donde la gestión ambiental y la innovación tecnológica trabajen juntas para regenerar, no solo mitigar. Donde cada material tenga trazabilidad, cada proceso sea transparente y cada actor —desde el ciudadano hasta la industria— sea parte consciente del ciclo.</p>
-                    
-                    <p><strong>Nuestra misión:</strong> Diseñar e implementar soluciones que conecten a empresas, comunidades y medio ambiente en un ecosistema de confianza verificable. Transformar la complejidad normativa en oportunidades de mejora. Demostrar que la tecnología, bien aplicada, puede ser una herramienta de consciencia colectiva.</p>
-                    
-                    <p><strong>Nuestro propósito:</strong> Creemos que la resiliencia no es solo adaptarse al cambio, sino liderarlo. Por eso trabajamos con la filosofía Kaizen: mejora continua, paso a paso, sin perder de vista el horizonte. Porque sabemos que cada pequeña acción consciente, multiplicada por muchos, genera el impacto que el mundo necesita.</p>
-                    
-                    <p style="font-style: italic; margin-top: 1.5rem; color: var(--gria-dark);">Quienes eligen trabajar con GRIA no buscan solo un proveedor de servicios. Buscan un equipo que entienda que detrás de cada norma hay un propósito, detrás de cada dato hay una historia, y detrás de cada desafío hay una posibilidad de hacer las cosas mejor. Esa es la invitación. Esa es GRIA.</p>
-                    
-                    <div class="about-values">
-                        <span class="value-tag">Transparencia</span>
-                        <span class="value-tag">Innovación</span>
-                        <span class="value-tag">Resiliencia</span>
-                        <span class="value-tag">Consciencia</span>
-                        <span class="value-tag">Kaizen</span>
-                    </div>
                 </div>
                 
-                <div class="about-image">
+                <div class="about-intro-image">
                     <img src="logo.jpg" alt="GRIA SpA - Environment & Innovation">
+                </div>
+            </div>
+            
+            <!-- Parte 2: Visión, Misión, Propósito -->
+            <div class="about-pillars">
+                <div class="pillar-card">
+                    <div class="icon">🔭</div>
+                    <h4>Nuestra Visión</h4>
+                    <p>Un futuro donde la gestión ambiental y la innovación tecnológica trabajen juntas para regenerar, no solo mitigar. Donde cada material tenga trazabilidad, cada proceso sea transparente y cada actor —desde el ciudadano hasta la industria— sea parte consciente del ciclo.</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="icon">🎯</div>
+                    <h4>Nuestra Misión</h4>
+                    <p>Diseñar e implementar soluciones que conecten a empresas, comunidades y medio ambiente en un ecosistema de confianza verificable. Transformar la complejidad normativa en oportunidades de mejora. Demostrar que la tecnología, bien aplicada, puede ser una herramienta de consciencia colectiva.</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="icon">💚</div>
+                    <h4>Nuestro Propósito</h4>
+                    <p>Creemos que la resiliencia no es solo adaptarse al cambio, sino liderarlo. Por eso trabajamos con la filosofía Kaizen: mejora continua, paso a paso, sin perder de vista el horizonte. Porque sabemos que cada pequeña acción consciente, multiplicada por muchos, genera el impacto que el mundo necesita.</p>
+                </div>
+            </div>
+            
+            <!-- Parte 3: Cierre e invitación -->
+            <div class="about-closing">
+                <p>Quienes eligen trabajar con GRIA no buscan solo un proveedor de servicios. Buscan un equipo que entienda que detrás de cada norma hay un propósito, detrás de cada dato hay una historia, y detrás de cada desafío hay una posibilidad de hacer las cosas mejor. Esa es la invitación. Esa es GRIA.</p>
+                
+                <div class="about-values">
+                    <span class="value-tag">Transparencia</span>
+                    <span class="value-tag">Innovación</span>
+                    <span class="value-tag">Resiliencia</span>
+                    <span class="value-tag">Consciencia</span>
+                    <span class="value-tag">Kaizen</span>
                 </div>
             </div>
         </div>

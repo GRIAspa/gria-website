@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gria.solutions/sitemap.xml
+
+# Páginas de agradecimiento no indexar
+Disallow: /gracias.html
+Disallow: /gracias-beco.html

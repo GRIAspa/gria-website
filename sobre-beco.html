@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BECO: Sistema de trazabilidad blockchain para economía circular. Transformando la gestión de residuos en Chile.">
-    <title>Sobre BECO - GRIA SpA</title>
+    <title>BECO - Be Conscious | Sistema de Trazabilidad de Reciclaje | GRIA SpA</title>
+    <meta name="description" content="BECO es un sistema de trazabilidad de reciclaje con blockchain, IoT e IA. Conecta ciudadanos, recolectores y empresas en una red de confianza verificable.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --emerald-50: #ecfdf5;
+            --emerald-100: #d1fae5;
+            --emerald-200: #a7f3d0;
+            --emerald-400: #34d399;
+            --emerald-500: #10b981;
+            --emerald-600: #059669;
+            --emerald-700: #047857;
+            --emerald-800: #065f46;
+            --emerald-900: #064e3b;
+            
+            --purple-500: #8b5cf6;
+            --purple-600: #7c3aed;
+            --pink-500: #ec4899;
+            
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,457 +46,703 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.8;
-            color: #333;
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, var(--emerald-50) 0%, #ffffff 50%, var(--emerald-50) 100%);
+            color: var(--gray-800);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        header {
-            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
+        /* ===== NAVIGATION ===== */
         nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 1rem 2rem;
+        }
+
+        .nav-content {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .back-link {
-            color: white;
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
             text-decoration: none;
-            padding: 0.5rem 1.5rem;
-            border: 1px solid white;
-            border-radius: 25px;
-            transition: all 0.3s;
+            color: var(--gray-800);
         }
 
-        .back-link:hover {
-            background: white;
-            color: #2d5016;
+        .nav-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--emerald-500), var(--emerald-600));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
         }
 
-        .hero-article {
-            background: linear-gradient(135deg, #1a3409 0%, #2d5016 100%);
-            color: white;
-            padding: 6rem 2rem 4rem;
-            text-align: center;
+        .nav-logo-text {
+            font-weight: 700;
+            font-size: 1.25rem;
         }
 
-        .hero-article h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 300;
-            letter-spacing: 2px;
+        .nav-logo-text span {
+            color: var(--emerald-600);
         }
 
-        .hero-article .subtitle {
-            font-size: 1.4rem;
-            opacity: 0.95;
-            max-width: 700px;
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--emerald-600);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--emerald-500), var(--emerald-600));
+            color: white !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(5deg); }
+            66% { transform: translate(-20px, 20px) rotate(-5deg); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
             margin: 0 auto;
-            font-weight: 300;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
-        article {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
+        .hero-text h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--emerald-600), var(--emerald-800));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        article h2 {
-            color: #2d5016;
-            font-size: 2.2rem;
-            margin: 3rem 0 1.5rem;
+        .hero-text h1 span {
+            background: linear-gradient(135deg, var(--purple-500), var(--pink-500));
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
             font-weight: 400;
         }
 
-        article h3 {
-            color: #4a7c2c;
-            font-size: 1.6rem;
-            margin: 2rem 0 1rem;
-        }
-
-        article p {
-            margin-bottom: 1.5rem;
-            font-size: 1.15rem;
-            line-height: 1.9;
-            color: #444;
-        }
-
-        .vision-box {
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            padding: 3rem;
-            border-radius: 20px;
-            border-left: 6px solid #4a7c2c;
-            margin: 3rem 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .vision-box h3 {
-            color: #1a3409;
-            margin: 0 0 1.5rem 0;
-            font-size: 1.8rem;
-        }
-
-        .vision-box p {
-            color: #2d5016;
-            font-size: 1.2rem;
-            line-height: 1.9;
-            margin: 0;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .benefit-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            border-top: 4px solid #66bb6a;
-            transition: all 0.3s;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-        }
-
-        .benefit-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .benefit-card h4 {
-            color: #2d5016;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .benefit-card p {
-            font-size: 1rem;
-            color: #666;
-            margin: 0;
-        }
-
-        .stakeholder-section {
-            background: #f5f9f3;
-            padding: 3rem;
-            border-radius: 20px;
-            margin: 3rem 0;
-        }
-
-        .stakeholder-section h3 {
-            text-align: center;
-            color: #1a3409;
-            margin-bottom: 2rem;
-        }
-
-        .stakeholders {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .stakeholder-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid #66bb6a;
-        }
-
-        .stakeholder-item h4 {
-            color: #2d5016;
-            margin-bottom: 0.5rem;
-        }
-
-        .stakeholder-item p {
-            font-size: 1rem;
-            color: #666;
-            margin: 0;
-        }
-
-        .quote {
-            font-style: italic;
-            font-size: 1.4rem;
-            color: #666;
-            border-left: 5px solid #4a7c2c;
-            padding-left: 2rem;
-            margin: 3rem 0;
-        }
-
-        .impact-box {
-            background: linear-gradient(135deg, #1a3409 0%, #2d5016 100%);
+        .patent-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--gray-800), var(--gray-900));
             color: white;
-            padding: 3rem;
-            border-radius: 20px;
-            margin: 3rem 0;
+            padding: 0.75rem 1.25rem;
+            border-radius: 50px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            animation: pulse-glow 3s ease-in-out infinite;
         }
 
-        .impact-box h3 {
-            color: #66bb6a;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.5); }
         }
 
-        .impact-box ul {
-            list-style: none;
-            padding: 0;
+        .patent-badge::before {
+            content: '🔒';
         }
 
-        .impact-box li {
-            padding: 0.8rem 0;
-            padding-left: 2rem;
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--emerald-500), var(--emerald-600));
+            color: white;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--gray-700);
+            border: 2px solid var(--gray-200);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--emerald-500);
+            color: var(--emerald-600);
+        }
+
+        /* Phone Mockups */
+        .hero-visual {
             position: relative;
-            font-size: 1.1rem;
+            display: flex;
+            justify-content: center;
+            perspective: 1000px;
         }
 
-        .impact-box li:before {
-            content: "✓";
+        .phone-mockup {
+            width: 280px;
+            height: 580px;
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: 
+                0 50px 100px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            transform: rotateY(-5deg) rotateX(5deg);
+            transition: transform 0.5s ease;
+        }
+
+        .phone-mockup:hover {
+            transform: rotateY(0deg) rotateX(0deg);
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #059669, #10b981);
+            border-radius: 32px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .phone-notch {
             position: absolute;
-            left: 0;
-            color: #66bb6a;
-            font-weight: bold;
-            font-size: 1.3rem;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 30px;
+            background: #1a1a2e;
+            border-radius: 0 0 20px 20px;
         }
 
-        .cta-section {
-            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
-            padding: 4rem 3rem;
-            border-radius: 20px;
+        .phone-content {
+            padding: 50px 20px 20px;
+            color: white;
+            height: 100%;
+        }
+
+        .phone-header {
             text-align: center;
-            margin: 4rem 0;
+            margin-bottom: 20px;
         }
 
-        .cta-section h3 {
-            color: #1a3409;
+        .phone-logo {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .phone-title {
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .phone-user {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .phone-user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .phone-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .phone-username {
+            font-weight: 600;
+        }
+
+        .phone-level {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .phone-tokens {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .token-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .phone-scan-btn {
+            background: white;
+            color: var(--emerald-600);
+            border-radius: 20px;
+            padding: 15px;
+            text-align: center;
+            font-weight: 700;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .phone-bags {
+            margin-top: 15px;
+        }
+
+        .phone-bag {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 10px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bag-icon {
+            font-size: 1.25rem;
+        }
+
+        .bag-info {
+            flex: 1;
+        }
+
+        .bag-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .bag-progress {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            margin-top: 4px;
+        }
+
+        .bag-progress-fill {
+            height: 100%;
+            background: white;
+            border-radius: 2px;
+        }
+
+        /* Second phone (GCollector) */
+        .phone-mockup-secondary {
+            position: absolute;
+            right: -60px;
+            top: 60px;
+            width: 240px;
+            height: 500px;
+            transform: rotateY(10deg) rotateX(-5deg) scale(0.9);
+            z-index: -1;
+            opacity: 0.9;
+        }
+
+        .phone-mockup-secondary .phone-screen {
+            background: linear-gradient(180deg, #7c3aed, #8b5cf6);
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .features {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--emerald-100);
+            color: var(--emerald-700);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--gray-500);
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--gray-50);
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .feature-card:hover {
+            background: white;
+            border-color: var(--emerald-200);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--emerald-400), var(--emerald-500));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
             margin-bottom: 1.5rem;
+        }
+
+        .feature-card:nth-child(2) .feature-icon {
+            background: linear-gradient(135deg, var(--purple-500), var(--purple-600));
+        }
+
+        .feature-card:nth-child(3) .feature-icon {
+            background: linear-gradient(135deg, var(--pink-500), #f472b6);
+        }
+
+        .feature-card:nth-child(4) .feature-icon {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        .feature-card:nth-child(5) .feature-icon {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        .feature-card:nth-child(6) .feature-icon {
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-desc {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+        }
+
+        /* ===== HOW IT WORKS ===== */
+        .how-it-works {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, var(--gray-50), white);
+        }
+
+        .steps-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .step:nth-child(even) {
+            direction: rtl;
+        }
+
+        .step:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--emerald-500), var(--emerald-600));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .step-desc {
+            color: var(--gray-600);
+            font-size: 1.05rem;
+        }
+
+        .step-visual {
+            background: var(--gray-100);
+            border-radius: 24px;
+            padding: 2rem;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-emoji {
+            font-size: 6rem;
+        }
+
+        /* ===== APPS SECTION ===== */
+        .apps-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--emerald-800), var(--emerald-900));
+            color: white;
+        }
+
+        .apps-section .section-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .apps-section .section-title {
+            color: white;
+        }
+
+        .apps-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .apps-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .app-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .app-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .app-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--emerald-400), var(--emerald-500));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 2rem;
         }
 
-        .cta-section p {
-            font-size: 1.2rem;
-            color: #2d5016;
-            margin-bottom: 2rem;
+        .app-card:nth-child(2) .app-icon {
+            background: linear-gradient(135deg, var(--purple-500), var(--pink-500));
         }
 
-        .cta-button {
-            display: inline-block;
-            background: #4a7c2c;
-            color: white;
-            padding: 1.2rem 3rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(74, 124, 44, 0.3);
+        .app-name {
+            font-size: 1.5rem;
+            font-weight: 700;
         }
 
-        .cta-button:hover {
-            background: #2d5016;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(74, 124, 44, 0.4);
+        .app-for {
+            opacity: 0.7;
+            font-size: 0.9rem;
         }
 
-        footer {
-            background: #1a3409;
-            color: white;
-            padding: 2rem;
+        .app-features {
+            list-style: none;
+        }
+
+        .app-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .app-features li:last-child {
+            border-bottom: none;
+        }
+
+        .app-features li::before {
+            content: '✓';
+            width: 24px;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        /* ===== STATS ===== */
+        .stats {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .stats-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
             text-align: center;
         }
 
-        @media (max-width: 768px) {
-            .hero-article h1 {
-                font-size: 2.5rem;
-            }
-
-            article {
-                padding: 2rem 1.5rem;
-            }
-
-            .benefits-grid, .stakeholders {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">GRIA</div>
-            <a href="index.html" class="back-link">← Volver al inicio</a>
-        </nav>
-    </header>
-
-    <div class="hero-article">
-        <h1>BECO</h1>
-        <p class="subtitle">Be Conscious · Sé Consciente</p>
-    </div>
-
-    <article>
-        <div class="vision-box">
-            <h3>Nuestra Visión</h3>
-            <p>BECO es más que una plataforma tecnológica. Es un movimiento hacia la consciencia colectiva, donde cada acción cuenta, cada material tiene una historia, y cada participante es parte de la transformación hacia una economía verdaderamente circular.</p>
-        </div>
-
-        <h2>¿Qué es BECO?</h2>
-        
-        <p>BECO (Be Conscious) es un <strong>sistema de trazabilidad basado en blockchain</strong> diseñado específicamente para economía circular. Conectamos a todos los actores del ecosistema de reciclaje en una plataforma transparente, verificable e incentivadora.</p>
-
-        <p>A diferencia de los sistemas tradicionales que dependen de registros manuales y confianza ciega, BECO crea una <strong>fuente única de verdad</strong> donde cada material reciclable tiene su identidad digital y cada acción es verificable.</p>
-
-        <h2>Los Pilares de BECO</h2>
-
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <span class="icon">🔗</span>
-                <h4>Trazabilidad Total</h4>
-                <p>Seguimiento completo del ciclo de vida de materiales reciclables desde su origen hasta su transformación, usando tecnología blockchain inmutable.</p>
-            </div>
-
-            <div class="benefit-card">
-                <span class="icon">🎮</span>
-                <h4>Gamificación</h4>
-                <p>Sistema de eco-tokens que recompensa a ciudadanos por participar activamente en la economía circular. Tu consciencia ambiental tiene valor real.</p>
-            </div>
-
-            <div class="benefit-card">
-                <span class="icon">📊</span>
-                <h4>Datos en Tiempo Real</h4>
-                <p>Información verificable y actualizada instantáneamente para optimización de rutas, cumplimiento normativo y toma de decisiones.</p>
-            </div>
-
-            <div class="benefit-card">
-                <span class="icon">✅</span>
-                <h4>Cumplimiento REP Simplificado</h4>
-                <p>Facilitamos el cumplimiento de la Ley 20920 con registros automáticos, inmutables y auditables que eliminan la burocracia.</p>
-            </div>
-
-            <div class="benefit-card">
-                <span class="icon">🤝</span>
-                <h4>Ecosistema Colaborativo</h4>
-                <p>Conectamos ciudadanos, empresas, recicladores y municipalidades en una red donde todos ganan al participar.</p>
-            </div>
-
-            <div class="benefit-card">
-                <span class="icon">🌍</span>
-                <h4>Escalable y Adaptable</h4>
-                <p>Diseñado para comenzar a nivel municipal y escalar hacia cobertura nacional e internacional, aplicable a múltiples industrias.</p>
-            </div>
-        </div>
-
-        <div class="quote">
-            "No solo rastreamos materiales. Creamos consciencia colectiva sobre el impacto de cada acción individual."
-        </div>
-
-        <h2>Beneficios Para Cada Actor</h2>
-
-        <div class="stakeholder-section">
-            <h3>Un Sistema Que Beneficia a Todos</h3>
-            <div class="stakeholders">
-                <div class="stakeholder-item">
-                    <h4>👥 Ciudadanos</h4>
-                    <p>Transparencia total sobre el destino de sus materiales reciclables. Recompensas reales por participar. Empoderamiento a través de la información.</p>
-                </div>
-
-                <div class="stakeholder-item">
-                    <h4>🏢 Empresas</h4>
-                    <p>Cumplimiento REP simplificado. Certificación verificable de sostenibilidad. Reputación ambiental respaldada por datos inmutables.</p>
-                </div>
-
-                <div class="stakeholder-item">
-                    <h4>🏙️ Municipalidades</h4>
-                    <p>Optimización de operaciones con datos en tiempo real. Participación ciudadana incrementada. Acceso facilitado a financiamiento verde.</p>
-                </div>
-
-                <div class="stakeholder-item">
-                    <h4>♻️ Recicladores</h4>
-                    <p>Trazabilidad que certifica calidad de materiales. Acceso a flujos verificados. Transparencia en toda la cadena de valor.</p>
-                </div>
-            </div>
-        </div>
-
-        <h2>El Impacto de BECO</h2>
-
-        <div class="impact-box">
-            <h3>Transformación Sistémica</h3>
-            <ul>
-                <li>Aumento verificable en tasas de reciclaje</li>
-                <li>Reducción de costos operacionales para municipalidades</li>
-                <li>Eliminación del greenwashing con certificaciones blockchain</li>
-                <li>Creación de economía circular con valor distribuido</li>
-                <li>Datos confiables para políticas públicas basadas en evidencia</li>
-                <li>Participación ciudadana incentivada y medible</li>
-                <li>Cumplimiento normativo automatizado y verificable</li>
-            </ul>
-        </div>
-
-        <h2>Más Allá de los Residuos</h2>
-
-        <p>Aunque BECO nace enfocado en la gestión de residuos reciclables bajo la Ley REP, nuestra arquitectura tecnológica es aplicable a múltiples sectores donde la trazabilidad y confianza son críticas:</p>
-
-        <ul style="margin: 1.5rem 0; padding-left: 2rem; font-size: 1.1rem; line-height: 2;">
-            <li><strong>Agricultura:</strong> Trazabilidad desde semilla hasta mesa</li>
-            <li><strong>Ganadería:</strong> Certificación de origen y bienestar animal</li>
-            <li><strong>Minería:</strong> Verificación de cadenas de suministro responsables</li>
-            <li><strong>Recursos Hídricos:</strong> Monitoreo y gestión de agua</li>
-            <li><strong>Energías Renovables:</strong> Certificados de origen verde verificables</li>
-        </ul>
-
-        <p>Nuestra visión es crear una <strong>infraestructura de confianza</strong> para la economía circular en toda Latinoamérica.</p>
-
-        <h2>¿Por Qué Ahora?</h2>
-
-        <p>Chile está en un momento único. La Ley REP 20920 establece metas ambiciosas pero los sistemas actuales de verificación son insuficientes. Las municipalidades buscan soluciones innovadoras. Los ciudadanos están cada vez más conscientes. Las empresas necesitan demostrar cumplimiento real.</p>
-
-        <p><strong>BECO llega en el momento exacto</strong> donde la tecnología, la regulación, la conciencia ciudadana y la necesidad empresarial convergen.</p>
-
-        <div class="quote">
-            "No estamos inventando la rueda. Estamos usando tecnología probada para resolver un problema real de forma elegante y escalable."
-        </div>
-
-        <h2>El Viaje Recién Comienza</h2>
-
-        <p>BECO está en desarrollo activo. Estamos construyendo las bases tecnológicas, estableciendo alianzas estratégicas, y preparando proyectos piloto con municipalidades visionarias.</p>
-
-        <p>Nuestro objetivo para 2025 es demostrar que un sistema de trazabilidad blockchain para economía circular no solo es posible, sino <strong>necesario, rentable y escalable</strong>.</p>
-
-        <div class="cta-section">
-            <h3>¿Quieres Ser Parte de Esta Transformación?</h3>
-            <p>Ya seas ciudadano, empresa, municipalidad o inversionista, hay un espacio para ti en BECO.</p>
-            <a href="mailto:contact@gria.solutions" class="cta-button">Conversemos</a>
-        </div>
-
-        <p style="text-align: center; margin-top: 4rem; font-size: 1.3rem; color: #2d5016; font-weight: 300; font-style: italic;">
-            BECO: Donde la tecnología encuentra el propósito,<br>
-            y la consciencia individual se transforma en impacto colectivo.
-        </p>
-    </article>
-
-<footer>
-        <p>© 2025 GRIA SpA — Todos los derechos reservados</p>
-        <p class="footer-legal">BECO® es una marca de GRIA SpA · Sistema protegido por derechos de autor</p>
-        <p style="margin-top: 0.5rem;">De la crisis a la consciencia 🌱</p>
-    </footer>
-</body>
-</html>
+      

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias - GRIA SpA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #ecfdf5 100%);
+            color: #1f2937;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1rem 2rem;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: #1f2937;
+        }
+
+        .nav-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-logo-text {
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .nav-logo-text span { color: #059669; }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4b5563;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover { color: #059669; }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .thank-you-container {
+            text-align: center;
+            max-width: 550px;
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3rem;
+            color: white;
+            animation: bounce 0.8s ease-in-out;
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.3);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .thank-you-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #065f46;
+            margin-bottom: 1rem;
+        }
+
+        .thank-you-message {
+            font-size: 1.1rem;
+            color: #4b5563;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .info-box {
+            background: #f9fafb;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        .info-box p {
+            color: #374151;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #374151;
+            border: 2px solid #e5e7eb;
+        }
+
+        .btn-secondary:hover {
+            border-color: #10b981;
+            color: #059669;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .social-links p {
+            color: #6b7280;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #059669;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .footer-text {
+            color: #9ca3af;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 640px) {
+            .thank-you-title { font-size: 1.75rem; }
+            .success-icon { width: 80px; height: 80px; font-size: 2.5rem; }
+            .cta-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="https://gria.solutions" class="nav-logo">
+                <div class="nav-logo-icon">G</div>
+                <div class="nav-logo-text"><span>GRIA</span> SpA</div>
+            </a>
+            <div class="nav-links">
+                <a href="https://gria.solutions/#servicios">Servicios</a>
+                <a href="https://gria.solutions/#contacto">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="thank-you-container">
+            <div class="success-icon">✓</div>
+            
+            <h1 class="thank-you-title">Mensaje recibido!</h1>
+            
+            <p class="thank-you-message">
+                Gracias por contactarnos. Hemos recibido tu mensaje y nuestro equipo 
+                te respondera a la brevedad posible.
+            </p>
+
+            <div class="info-box">
+                <p>📧 Tiempo de respuesta: 24-48 horas habiles</p>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="https://gria.solutions" class="btn btn-primary">
+                    🏠 Volver al inicio
+                </a>
+                <a href="https://gria.solutions/#servicios" class="btn btn-secondary">
+                    📋 Ver servicios
+                </a>
+            </div>
+
+            <div class="social-links">
+                <p>Conecta con nosotros:</p>
+                <a href="https://www.linkedin.com/company/gria-spa" target="_blank">
+                    💼 LinkedIn - GRIA SpA
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-text">
+            2025 GRIA SpA - Gestion Resiliente de Innovacion Ambiental - Vina del Mar, Chile
+        </p>
+    </footer>
+</body>
+</html>

@@ -3,66 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BECO - Be Conscious | Sistema de Trazabilidad de Reciclaje | GRIA SpA</title>
-    <meta name="description" content="BECO es un sistema de trazabilidad de reciclaje con blockchain, IoT e IA. Conecta ciudadanos, recolectores y empresas en una red de confianza verificable.">
-    
-    <!-- Fonts -->
+    <title>BECO - Be Conscious | GRIA SpA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --emerald-50: #ecfdf5;
-            --emerald-100: #d1fae5;
-            --emerald-200: #a7f3d0;
-            --emerald-400: #34d399;
-            --emerald-500: #10b981;
-            --emerald-600: #059669;
-            --emerald-700: #047857;
-            --emerald-800: #065f46;
-            --emerald-900: #064e3b;
-            
-            --purple-500: #8b5cf6;
-            --purple-600: #7c3aed;
-            --pink-500: #ec4899;
-            
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
-            --gray-400: #9ca3af;
-            --gray-500: #6b7280;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-800: #1f2937;
-            --gray-900: #111827;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: 'Outfit', sans-serif;
-            background: linear-gradient(135deg, var(--emerald-50) 0%, #ffffff 50%, var(--emerald-50) 100%);
-            color: var(--gray-800);
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 50%, #ecfdf5 100%);
+            color: #1f2937;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        /* ===== NAVIGATION ===== */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 100;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--gray-200);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
             padding: 1rem 2rem;
         }
 
@@ -79,13 +42,13 @@
             align-items: center;
             gap: 0.75rem;
             text-decoration: none;
-            color: var(--gray-800);
+            color: #1f2937;
         }
 
         .nav-logo-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, var(--emerald-500), var(--emerald-600));
+            background: linear-gradient(135deg, #10b981, #059669);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -98,9 +61,7 @@
             font-size: 1.25rem;
         }
 
-        .nav-logo-text span {
-            color: var(--emerald-600);
-        }
+        .nav-logo-text span { color: #059669; }
 
         .nav-links {
             display: flex;
@@ -110,66 +71,26 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--gray-600);
+            color: #4b5563;
             font-weight: 500;
-            transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--emerald-600);
-        }
+        .nav-links a:hover { color: #059669; }
 
         .nav-cta {
-            background: linear-gradient(135deg, var(--emerald-500), var(--emerald-600));
+            background: linear-gradient(135deg, #10b981, #059669);
             color: white !important;
             padding: 0.75rem 1.5rem;
             border-radius: 50px;
             font-weight: 600;
         }
 
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
-        }
-
-        /* ===== HERO SECTION ===== */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             padding: 8rem 2rem 4rem;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 15s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(30px, -30px) rotate(5deg); }
-            66% { transform: translate(-20px, 20px) rotate(-5deg); }
         }
 
         .hero-content {
@@ -179,55 +100,39 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            position: relative;
-            z-index: 1;
         }
 
         .hero-text h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--emerald-600), var(--emerald-800));
+            color: #065f46;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .hero-text h1 span {
-            background: linear-gradient(135deg, var(--purple-500), var(--pink-500));
-            -webkit-background-clip: text;
-            background-clip: text;
-        }
-
         .hero-subtitle {
-            font-size: 1.5rem;
-            color: var(--gray-600);
+            font-size: 1.25rem;
+            color: #4b5563;
             margin-bottom: 2rem;
-            font-weight: 400;
         }
 
         .patent-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: linear-gradient(135deg, var(--gray-800), var(--gray-900));
+            background: #1f2937;
             color: white;
             padding: 0.75rem 1.25rem;
             border-radius: 50px;
-            font-family: 'Space Mono', monospace;
             font-size: 0.85rem;
-            margin-bottom: 2rem;
-            animation: pulse-glow 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.5); }
-        }
-
-        .patent-badge::before {
-            content: '🔒';
+            margin-bottom: 1.5rem;
         }
 
         .hero-cta {
@@ -240,61 +145,36 @@
             padding: 1rem 2rem;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 1rem;
             text-decoration: none;
-            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            cursor: pointer;
-            border: none;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--emerald-500), var(--emerald-600));
+            background: linear-gradient(135deg, #10b981, #059669);
             color: white;
             box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
-        }
-
         .btn-secondary {
             background: white;
-            color: var(--gray-700);
-            border: 2px solid var(--gray-200);
+            color: #374151;
+            border: 2px solid #e5e7eb;
         }
 
-        .btn-secondary:hover {
-            border-color: var(--emerald-500);
-            color: var(--emerald-600);
-        }
-
-        /* Phone Mockups */
         .hero-visual {
-            position: relative;
             display: flex;
             justify-content: center;
-            perspective: 1000px;
         }
 
         .phone-mockup {
             width: 280px;
-            height: 580px;
-            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            height: 560px;
+            background: #1a1a2e;
             border-radius: 40px;
             padding: 12px;
-            box-shadow: 
-                0 50px 100px rgba(0, 0, 0, 0.3),
-                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-            transform: rotateY(-5deg) rotateX(5deg);
-            transition: transform 0.5s ease;
-        }
-
-        .phone-mockup:hover {
-            transform: rotateY(0deg) rotateX(0deg);
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.25);
         }
 
         .phone-screen {
@@ -312,15 +192,14 @@
             left: 50%;
             transform: translateX(-50%);
             width: 120px;
-            height: 30px;
+            height: 28px;
             background: #1a1a2e;
-            border-radius: 0 0 20px 20px;
+            border-radius: 0 0 16px 16px;
         }
 
         .phone-content {
-            padding: 50px 20px 20px;
+            padding: 45px 20px 20px;
             color: white;
-            height: 100%;
         }
 
         .phone-header {
@@ -328,19 +207,12 @@
             margin-bottom: 20px;
         }
 
-        .phone-logo {
-            font-size: 2rem;
-            margin-bottom: 5px;
-        }
-
-        .phone-title {
-            font-weight: 700;
-            font-size: 1.25rem;
-        }
+        .phone-logo { font-size: 2rem; }
+        .phone-title { font-weight: 700; font-size: 1.2rem; }
 
         .phone-user {
             background: rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
+            border-radius: 16px;
             padding: 15px;
             margin-bottom: 15px;
         }
@@ -353,60 +225,46 @@
         }
 
         .phone-avatar {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background: linear-gradient(135deg, #fbbf24, #f59e0b);
-            border-radius: 15px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
         }
 
-        .phone-username {
-            font-weight: 600;
-        }
-
-        .phone-level {
-            font-size: 0.8rem;
-            opacity: 0.8;
-        }
+        .phone-username { font-weight: 600; font-size: 0.95rem; }
+        .phone-level { font-size: 0.75rem; opacity: 0.8; }
 
         .phone-tokens {
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            border-radius: 12px;
             padding: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .token-amount {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
+        .token-amount { font-size: 1.25rem; font-weight: 700; }
 
         .phone-scan-btn {
             background: white;
-            color: var(--emerald-600);
-            border-radius: 20px;
-            padding: 15px;
+            color: #059669;
+            border-radius: 16px;
+            padding: 12px;
             text-align: center;
             font-weight: 700;
             margin-top: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            font-size: 0.9rem;
         }
 
-        .phone-bags {
-            margin-top: 15px;
-        }
+        .phone-bags { margin-top: 15px; }
 
         .phone-bag {
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 10px;
             margin-bottom: 8px;
             display: flex;
@@ -414,18 +272,9 @@
             gap: 10px;
         }
 
-        .bag-icon {
-            font-size: 1.25rem;
-        }
-
-        .bag-info {
-            flex: 1;
-        }
-
-        .bag-name {
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
+        .bag-icon { font-size: 1.1rem; }
+        .bag-info { flex: 1; }
+        .bag-name { font-size: 0.8rem; font-weight: 600; }
 
         .bag-progress {
             height: 4px;
@@ -440,38 +289,20 @@
             border-radius: 2px;
         }
 
-        /* Second phone (GCollector) */
-        .phone-mockup-secondary {
-            position: absolute;
-            right: -60px;
-            top: 60px;
-            width: 240px;
-            height: 500px;
-            transform: rotateY(10deg) rotateX(-5deg) scale(0.9);
-            z-index: -1;
-            opacity: 0.9;
-        }
-
-        .phone-mockup-secondary .phone-screen {
-            background: linear-gradient(180deg, #7c3aed, #8b5cf6);
-        }
-
-        /* ===== FEATURES SECTION ===== */
-        .features {
-            padding: 6rem 2rem;
-            background: white;
+        section {
+            padding: 5rem 2rem;
         }
 
         .section-header {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 3rem;
         }
 
         .section-tag {
             display: inline-block;
-            background: var(--emerald-100);
-            color: var(--emerald-700);
+            background: #d1fae5;
+            color: #047857;
             padding: 0.5rem 1rem;
             border-radius: 50px;
             font-size: 0.85rem;
@@ -480,16 +311,18 @@
         }
 
         .section-title {
-            font-size: 2.75rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            color: var(--gray-900);
+            color: #111827;
             margin-bottom: 1rem;
         }
 
         .section-subtitle {
-            font-size: 1.15rem;
-            color: var(--gray-500);
+            font-size: 1.1rem;
+            color: #6b7280;
         }
+
+        .features { background: white; }
 
         .features-grid {
             max-width: 1200px;
@@ -500,24 +333,22 @@
         }
 
         .feature-card {
-            background: var(--gray-50);
-            border-radius: 24px;
+            background: #f9fafb;
+            border-radius: 20px;
             padding: 2rem;
             transition: all 0.3s ease;
-            border: 1px solid transparent;
         }
 
         .feature-card:hover {
             background: white;
-            border-color: var(--emerald-200);
-            transform: translateY(-5px);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            transform: translateY(-5px);
         }
 
         .feature-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--emerald-400), var(--emerald-500));
+            background: linear-gradient(135deg, #34d399, #10b981);
             border-radius: 16px;
             display: flex;
             align-items: center;
@@ -526,109 +357,26 @@
             margin-bottom: 1.5rem;
         }
 
-        .feature-card:nth-child(2) .feature-icon {
-            background: linear-gradient(135deg, var(--purple-500), var(--purple-600));
-        }
-
-        .feature-card:nth-child(3) .feature-icon {
-            background: linear-gradient(135deg, var(--pink-500), #f472b6);
-        }
-
-        .feature-card:nth-child(4) .feature-icon {
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
-        }
-
-        .feature-card:nth-child(5) .feature-icon {
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-        }
-
-        .feature-card:nth-child(6) .feature-icon {
-            background: linear-gradient(135deg, #06b6d4, #0891b2);
-        }
+        .feature-card:nth-child(2) .feature-icon { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .feature-card:nth-child(3) .feature-icon { background: linear-gradient(135deg, #ec4899, #f472b6); }
+        .feature-card:nth-child(4) .feature-icon { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .feature-card:nth-child(5) .feature-icon { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .feature-card:nth-child(6) .feature-icon { background: linear-gradient(135deg, #06b6d4, #0891b2); }
 
         .feature-title {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            color: var(--gray-900);
+            color: #111827;
             margin-bottom: 0.75rem;
         }
 
         .feature-desc {
-            color: var(--gray-500);
+            color: #6b7280;
             font-size: 0.95rem;
         }
 
-        /* ===== HOW IT WORKS ===== */
-        .how-it-works {
-            padding: 6rem 2rem;
-            background: linear-gradient(180deg, var(--gray-50), white);
-        }
-
-        .steps-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .step {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-bottom: 4rem;
-        }
-
-        .step:nth-child(even) {
-            direction: rtl;
-        }
-
-        .step:nth-child(even) > * {
-            direction: ltr;
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--emerald-500), var(--emerald-600));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-
-        .step-title {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 1rem;
-        }
-
-        .step-desc {
-            color: var(--gray-600);
-            font-size: 1.05rem;
-        }
-
-        .step-visual {
-            background: var(--gray-100);
-            border-radius: 24px;
-            padding: 2rem;
-            min-height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .step-emoji {
-            font-size: 6rem;
-        }
-
-        /* ===== APPS SECTION ===== */
         .apps-section {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, var(--emerald-800), var(--emerald-900));
+            background: linear-gradient(135deg, #065f46, #064e3b);
             color: white;
         }
 
@@ -637,34 +385,22 @@
             color: white;
         }
 
-        .apps-section .section-title {
-            color: white;
-        }
-
-        .apps-section .section-subtitle {
-            color: rgba(255, 255, 255, 0.7);
-        }
+        .apps-section .section-title { color: white; }
+        .apps-section .section-subtitle { color: rgba(255, 255, 255, 0.7); }
 
         .apps-grid {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
+            gap: 2rem;
         }
 
         .app-card {
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            padding: 2.5rem;
+            border-radius: 20px;
+            padding: 2rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .app-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-5px);
         }
 
         .app-header {
@@ -675,63 +411,50 @@
         }
 
         .app-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--emerald-400), var(--emerald-500));
-            border-radius: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #34d399, #10b981);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.75rem;
         }
 
         .app-card:nth-child(2) .app-icon {
-            background: linear-gradient(135deg, var(--purple-500), var(--pink-500));
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
         }
 
-        .app-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
+        .app-name { font-size: 1.3rem; font-weight: 700; }
+        .app-for { opacity: 0.7; font-size: 0.9rem; }
 
-        .app-for {
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-
-        .app-features {
-            list-style: none;
-        }
+        .app-features { list-style: none; }
 
         .app-features li {
-            padding: 0.75rem 0;
+            padding: 0.6rem 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             gap: 0.75rem;
+            font-size: 0.95rem;
         }
 
-        .app-features li:last-child {
-            border-bottom: none;
-        }
+        .app-features li:last-child { border-bottom: none; }
 
         .app-features li::before {
             content: '✓';
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
+            flex-shrink: 0;
         }
 
-        /* ===== STATS ===== */
-        .stats {
-            padding: 4rem 2rem;
-            background: white;
-        }
+        .stats { background: white; padding: 4rem 2rem; }
 
         .stats-grid {
             max-width: 1000px;
@@ -741,34 +464,22 @@
             gap: 2rem;
         }
 
-        .stat-item {
-            text-align: center;
-        }
+        .stat-item { text-align: center; }
 
         .stat-number {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--emerald-500), var(--emerald-700));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #059669;
         }
 
         .stat-label {
-            color: var(--gray-500);
-            font-size: 0.95rem;
+            color: #6b7280;
+            font-size: 0.9rem;
             margin-top: 0.5rem;
         }
 
-        /* ===== PILOT ===== */
         .pilot {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, var(--gray-50), var(--emerald-50));
-        }
-
-        .pilot-content {
-            max-width: 800px;
-            margin: 0 auto;
+            background: linear-gradient(135deg, #f9fafb, #ecfdf5);
             text-align: center;
         }
 
@@ -776,68 +487,60 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: linear-gradient(135deg, var(--emerald-500), var(--emerald-600));
+            background: linear-gradient(135deg, #10b981, #059669);
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 50px;
             font-weight: 600;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .pilot-title {
-            font-size: 2.5rem;
+            font-size: 2.25rem;
             font-weight: 800;
-            color: var(--gray-900);
+            color: #111827;
             margin-bottom: 1rem;
         }
 
         .pilot-desc {
-            font-size: 1.15rem;
-            color: var(--gray-600);
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: #4b5563;
+            max-width: 600px;
+            margin: 0 auto 2rem;
         }
 
         .pilot-location {
             display: flex;
             justify-content: center;
-            gap: 3rem;
-            margin-top: 2rem;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
         .location-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--gray-700);
+            color: #374151;
             font-weight: 500;
         }
 
-        /* ===== CONTACT / DEMO ===== */
-        .contact {
-            padding: 6rem 2rem;
-            background: white;
-        }
+        .contact { background: white; }
 
-        .contact-container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        .contact-container { max-width: 550px; margin: 0 auto; }
 
         .contact-form {
-            background: var(--gray-50);
-            border-radius: 24px;
-            padding: 3rem;
-            border: 1px solid var(--gray-200);
+            background: #f9fafb;
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid #e5e7eb;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
+        .form-group { margin-bottom: 1.25rem; }
 
         .form-label {
             display: block;
             font-weight: 600;
-            color: var(--gray-700);
+            color: #374151;
             margin-bottom: 0.5rem;
         }
 
@@ -845,12 +548,11 @@
         .form-textarea,
         .form-select {
             width: 100%;
-            padding: 1rem;
-            border: 2px solid var(--gray-200);
-            border-radius: 12px;
+            padding: 0.875rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
             font-family: inherit;
             font-size: 1rem;
-            transition: all 0.3s ease;
             background: white;
         }
 
@@ -858,26 +560,21 @@
         .form-textarea:focus,
         .form-select:focus {
             outline: none;
-            border-color: var(--emerald-500);
-            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+            border-color: #10b981;
         }
 
-        .form-textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
+        .form-textarea { min-height: 100px; resize: vertical; }
 
         .form-submit {
             width: 100%;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, var(--emerald-500), var(--emerald-600));
+            padding: 1rem;
+            background: linear-gradient(135deg, #10b981, #059669);
             color: white;
             border: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
+            border-radius: 10px;
+            font-size: 1rem;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
         }
 
         .form-submit:hover {
@@ -887,25 +584,19 @@
 
         .contact-info {
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
         .contact-email {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--gray-600);
+            color: #4b5563;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
-        .contact-email:hover {
-            color: var(--emerald-600);
-        }
+        .contact-email:hover { color: #059669; }
 
-        /* ===== FOOTER ===== */
         footer {
-            background: var(--gray-900);
+            background: #111827;
             color: white;
             padding: 3rem 2rem;
             text-align: center;
@@ -916,109 +607,46 @@
             align-items: center;
             justify-content: center;
             gap: 0.75rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .footer-text {
-            color: var(--gray-400);
+            color: #9ca3af;
             font-size: 0.9rem;
+            margin-bottom: 0.5rem;
         }
 
-        .footer-links {
-            margin-top: 1rem;
-        }
+        .footer-links { margin-top: 1rem; }
 
         .footer-links a {
-            color: var(--gray-400);
+            color: #9ca3af;
             text-decoration: none;
             margin: 0 1rem;
-            transition: color 0.3s;
         }
 
-        .footer-links a:hover {
-            color: var(--emerald-400);
-        }
+        .footer-links a:hover { color: #34d399; }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 968px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 2.75rem;
-            }
-
-            .hero-cta {
-                justify-content: center;
-            }
-
-            .hero-visual {
-                margin-top: 3rem;
-            }
-
-            .phone-mockup-secondary {
-                display: none;
-            }
-
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .step {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .step:nth-child(even) {
-                direction: ltr;
-            }
-
-            .step-number {
-                margin: 0 auto 1.5rem;
-            }
-
-            .apps-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .nav-links {
-                display: none;
-            }
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .hero-cta { justify-content: center; }
+            .hero-visual { margin-top: 2rem; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .apps-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .nav-links { display: none; }
         }
 
         @media (max-width: 640px) {
-            .hero-text h1 {
-                font-size: 2.25rem;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .pilot-location {
-                flex-direction: column;
-                gap: 1rem;
-            }
+            .hero-text h1 { font-size: 2rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 2rem; }
+            .pilot-location { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="nav-content">
             <a href="https://gria.solutions" class="nav-logo">
@@ -1026,7 +654,7 @@
                 <div class="nav-logo-text"><span>BECO</span> by GRIA</div>
             </a>
             <div class="nav-links">
-                <a href="#features">Características</a>
+                <a href="#features">Caracteristicas</a>
                 <a href="#apps">Apps</a>
                 <a href="#pilot">Piloto 2026</a>
                 <a href="#demo" class="nav-cta">Solicitar Demo</a>
@@ -1034,28 +662,22 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
                 <div class="patent-badge">
-                    Patent Pending · USPTO 63/948,807
+                    🔒 Patent Pending - USPTO 63/948,807
                 </div>
                 <h1>Trazabilidad de reciclaje con <span>blockchain</span></h1>
                 <p class="hero-subtitle">
-                    BECO conecta ciudadanos, recolectores y empresas en una red de confianza verificable. Cada residuo tiene identidad digital. Cada acción, recompensa.
+                    BECO conecta ciudadanos, recolectores y empresas en una red de confianza verificable. Cada residuo tiene identidad digital. Cada accion, recompensa.
                 </p>
                 <div class="hero-cta">
-                    <a href="#demo" class="btn btn-primary">
-                        📩 Solicitar Demo
-                    </a>
-                    <a href="#features" class="btn btn-secondary">
-                        Conocer más →
-                    </a>
+                    <a href="#demo" class="btn btn-primary">📩 Solicitar Demo</a>
+                    <a href="#features" class="btn btn-secondary">Conocer mas →</a>
                 </div>
             </div>
             <div class="hero-visual">
-                <!-- Phone Mockup - BECO App -->
                 <div class="phone-mockup">
                     <div class="phone-screen">
                         <div class="phone-notch"></div>
@@ -1068,8 +690,8 @@
                                 <div class="phone-user-info">
                                     <div class="phone-avatar">🌱</div>
                                     <div>
-                                        <div class="phone-username">María González</div>
-                                        <div class="phone-level">🏆 Eco Guerrera · Nivel 5</div>
+                                        <div class="phone-username">Maria Gonzalez</div>
+                                        <div class="phone-level">🏆 Eco Guerrera - Nivel 5</div>
                                     </div>
                                 </div>
                                 <div class="phone-tokens">
@@ -1077,162 +699,82 @@
                                     <span class="token-amount">1,250</span>
                                 </div>
                             </div>
-                            <div class="phone-scan-btn">
-                                📸 Escanear Residuo
-                            </div>
+                            <div class="phone-scan-btn">📸 Escanear Residuo</div>
                             <div class="phone-bags">
                                 <div class="phone-bag">
                                     <span class="bag-icon">🧴</span>
                                     <div class="bag-info">
-                                        <div class="bag-name">Plásticos</div>
-                                        <div class="bag-progress">
-                                            <div class="bag-progress-fill" style="width: 70%"></div>
-                                        </div>
+                                        <div class="bag-name">Plasticos</div>
+                                        <div class="bag-progress"><div class="bag-progress-fill" style="width: 70%"></div></div>
                                     </div>
                                 </div>
                                 <div class="phone-bag">
                                     <span class="bag-icon">🥫</span>
                                     <div class="bag-info">
                                         <div class="bag-name">Latas</div>
-                                        <div class="bag-progress">
-                                            <div class="bag-progress-fill" style="width: 45%"></div>
-                                        </div>
+                                        <div class="bag-progress"><div class="bag-progress-fill" style="width: 45%"></div></div>
                                     </div>
                                 </div>
                                 <div class="phone-bag">
                                     <span class="bag-icon">📦</span>
                                     <div class="bag-info">
-                                        <div class="bag-name">Cartón</div>
-                                        <div class="bag-progress">
-                                            <div class="bag-progress-fill" style="width: 30%"></div>
-                                        </div>
+                                        <div class="bag-name">Carton</div>
+                                        <div class="bag-progress"><div class="bag-progress-fill" style="width: 30%"></div></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Phone Mockup - GCollector -->
-                <div class="phone-mockup phone-mockup-secondary">
-                    <div class="phone-screen">
-                        <div class="phone-notch"></div>
-                        <div class="phone-content">
-                            <div class="phone-header">
-                                <div class="phone-logo">🚴</div>
-                                <div class="phone-title">BECO GCollector</div>
-                            </div>
-                            <div class="phone-user" style="background: rgba(255,255,255,0.2)">
-                                <div style="text-align: center; padding: 1rem 0;">
-                                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📋</div>
-                                    <div style="font-weight: 600;">3 Solicitudes</div>
-                                    <div style="font-size: 0.8rem; opacity: 0.8;">pendientes</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features" id="features">
         <div class="section-header">
-            <span class="section-tag">Tecnología</span>
+            <span class="section-tag">Tecnologia</span>
             <h2 class="section-title">Arquitectura de confianza verificable</h2>
-            <p class="section-subtitle">Seis pilares tecnológicos que garantizan trazabilidad completa desde el origen hasta la valorización final.</p>
+            <p class="section-subtitle">Seis pilares tecnologicos que garantizan trazabilidad completa.</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">🔗</div>
                 <h3 class="feature-title">Blockchain</h3>
-                <p class="feature-desc">Registros inmutables en Polygon. Cada material tiene su identidad digital única que no puede ser alterada.</p>
+                <p class="feature-desc">Registros inmutables en Polygon. Cada material tiene su identidad digital unica.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📡</div>
-                <h3 class="feature-title">IoT & Sensores</h3>
-                <p class="feature-desc">Báscula conectada que pesa y verifica automáticamente. Integración con campanas y puntos limpios.</p>
+                <h3 class="feature-title">IoT y Sensores</h3>
+                <p class="feature-desc">Bascula conectada que pesa y verifica automaticamente cada deposito.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🤖</div>
                 <h3 class="feature-title">Inteligencia Artificial</h3>
-                <p class="feature-desc">ALI, asistente virtual que identifica materiales por cámara y educa sobre reciclaje correcto.</p>
+                <p class="feature-desc">ALI, asistente virtual que identifica materiales y educa sobre reciclaje.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🎮</div>
-                <h3 class="feature-title">Gamificación</h3>
-                <p class="feature-desc">BECO Tokens que recompensan cada acción. Niveles, logros y desafíos que motivan la participación.</p>
+                <h3 class="feature-title">Gamificacion</h3>
+                <p class="feature-desc">BECO Tokens que recompensan cada accion. Niveles, logros y desafios.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📜</div>
-                <h3 class="feature-title">NFT Certificación</h3>
-                <p class="feature-desc">Cada depósito verificado genera un NFT único. Certificación digital del destino final.</p>
+                <h3 class="feature-title">NFT Certificacion</h3>
+                <p class="feature-desc">Cada deposito verificado genera un NFT unico de trazabilidad.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📊</div>
                 <h3 class="feature-title">Trazabilidad Nivel 6</h3>
-                <p class="feature-desc">Seguimiento individual, no por lotes. Cada material trazado desde el origen hasta la valorización.</p>
+                <p class="feature-desc">Seguimiento individual, no por lotes. Cada material trazado completamente.</p>
             </div>
         </div>
     </section>
 
-    <!-- How it Works -->
-    <section class="how-it-works">
-        <div class="section-header">
-            <span class="section-tag">Proceso</span>
-            <h2 class="section-title">¿Cómo funciona BECO?</h2>
-            <p class="section-subtitle">Un flujo simple que conecta a todos los actores del ecosistema de reciclaje.</p>
-        </div>
-        <div class="steps-container">
-            <div class="step">
-                <div class="step-content">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Escanea y aprende</h3>
-                    <p class="step-desc">El ciudadano escanea su residuo con la cámara. ALI identifica el material, explica cómo prepararlo y en qué bolsa separarlo.</p>
-                </div>
-                <div class="step-visual">
-                    <span class="step-emoji">📸</span>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-content">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Acumula en tu BECOBag</h3>
-                    <p class="step-desc">Cada material va en su bolsa correspondiente: plásticos, latas, cartón. El vidrio va directo a la campana.</p>
-                </div>
-                <div class="step-visual">
-                    <span class="step-emoji">🛍️</span>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-content">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Solicita recolector</h3>
-                    <p class="step-desc">Cuando tu bolsa está llena, solicitas un recolector BECO. Como Uber, ves su ubicación en tiempo real.</p>
-                </div>
-                <div class="step-visual">
-                    <span class="step-emoji">🚴</span>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-content">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Verificación y tokens</h3>
-                    <p class="step-desc">El recolector pesa con báscula IoT. Al verificar, ambos reciben BECO Tokens. El material queda trazado con NFT.</p>
-                </div>
-                <div class="step-visual">
-                    <span class="step-emoji">🪙</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Apps Section -->
     <section class="apps-section" id="apps">
         <div class="section-header">
             <span class="section-tag">Aplicaciones</span>
             <h2 class="section-title">Dos apps, un ecosistema</h2>
-            <p class="section-subtitle">Cada actor tiene su herramienta diseñada para su rol específico.</p>
+            <p class="section-subtitle">Cada actor tiene su herramienta disenada para su rol especifico.</p>
         </div>
         <div class="apps-grid">
             <div class="app-card">
@@ -1246,11 +788,10 @@
                 <ul class="app-features">
                     <li>Escaneo de residuos con IA</li>
                     <li>ALI: asistente de reciclaje</li>
-                    <li>Gestión de bolsas separadas</li>
+                    <li>Gestion de bolsas separadas</li>
                     <li>Solicitar recolector</li>
                     <li>Ganar BECO Tokens</li>
                     <li>Ver trazabilidad de materiales</li>
-                    <li>Mapa de puntos limpios</li>
                 </ul>
             </div>
             <div class="app-card">
@@ -1263,23 +804,21 @@
                 </div>
                 <ul class="app-features">
                     <li>Recibir solicitudes de retiro</li>
-                    <li>Navegación al punto</li>
-                    <li>Verificación con báscula IoT</li>
+                    <li>Navegacion al punto</li>
+                    <li>Verificacion con bascula IoT</li>
                     <li>Registro de peso real</li>
                     <li>Ganar tokens por kg</li>
                     <li>Historial de recolecciones</li>
-                    <li>Estadísticas de desempeño</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Stats -->
     <section class="stats">
         <div class="stats-grid">
             <div class="stat-item">
                 <div class="stat-number">96%</div>
-                <div class="stat-label">Reducción costos auditoría</div>
+                <div class="stat-label">Reduccion costos auditoria</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">Nivel 6</div>
@@ -1296,43 +835,29 @@
         </div>
     </section>
 
-    <!-- Pilot -->
     <section class="pilot" id="pilot">
-        <div class="pilot-content">
-            <div class="pilot-badge">
-                🚀 Próximo lanzamiento
-            </div>
-            <h2 class="pilot-title">Piloto 2026</h2>
-            <p class="pilot-desc">
-                Estamos preparando el primer piloto municipal de BECO en la Región de Valparaíso. 
-                Un proyecto que demostrará cómo la tecnología puede transformar la gestión de residuos.
-            </p>
-            <div class="pilot-location">
-                <div class="location-item">
-                    📍 Viña del Mar, Chile
-                </div>
-                <div class="location-item">
-                    📅 Primer semestre 2026
-                </div>
-                <div class="location-item">
-                    🏛️ Alianzas municipales
-                </div>
-            </div>
+        <div class="pilot-badge">🚀 Proximo lanzamiento</div>
+        <h2 class="pilot-title">Piloto 2026</h2>
+        <p class="pilot-desc">
+            Estamos preparando el primer piloto municipal de BECO en la Region de Valparaiso.
+        </p>
+        <div class="pilot-location">
+            <div class="location-item">📍 Vina del Mar, Chile</div>
+            <div class="location-item">📅 Primer semestre 2026</div>
+            <div class="location-item">🏛️ Alianzas municipales</div>
         </div>
     </section>
 
-    <!-- Contact / Demo Request -->
     <section class="contact" id="demo">
         <div class="contact-container">
             <div class="section-header">
                 <span class="section-tag">Contacto</span>
                 <h2 class="section-title">Solicitar Demo Privado</h2>
-                <p class="section-subtitle">¿Interesado en conocer BECO? Agenda una demostración personalizada.</p>
+                <p class="section-subtitle">Agenda una demostracion personalizada de BECO.</p>
             </div>
             <form class="contact-form" action="https://formsubmit.co/contacto@gria.solutions" method="POST">
                 <input type="hidden" name="_subject" value="Solicitud Demo BECO">
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://gria.solutions/gracias.html">
                 
                 <div class="form-group">
                     <label class="form-label">Nombre completo</label>
@@ -1343,13 +868,13 @@
                     <input type="email" name="email" class="form-input" placeholder="tu@email.com" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Organización</label>
+                    <label class="form-label">Organizacion</label>
                     <input type="text" name="organizacion" class="form-input" placeholder="Empresa, municipalidad, etc.">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Tipo de interés</label>
+                    <label class="form-label">Tipo de interes</label>
                     <select name="interes" class="form-select" required>
-                        <option value="">Selecciona una opción</option>
+                        <option value="">Selecciona una opcion</option>
                         <option value="municipalidad">Municipalidad / Gobierno</option>
                         <option value="empresa">Empresa / Cumplimiento REP</option>
                         <option value="pro">Sistema PRO (ReSimple, Giro, etc.)</option>
@@ -1360,33 +885,24 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label">Mensaje (opcional)</label>
-                    <textarea name="mensaje" class="form-textarea" placeholder="Cuéntanos más sobre tu interés en BECO..."></textarea>
+                    <textarea name="mensaje" class="form-textarea" placeholder="Cuentanos mas sobre tu interes en BECO..."></textarea>
                 </div>
-                <button type="submit" class="form-submit">
-                    📩 Enviar solicitud
-                </button>
+                <button type="submit" class="form-submit">📩 Enviar solicitud</button>
             </form>
             <div class="contact-info">
-                <p style="color: var(--gray-500); margin-bottom: 0.5rem;">O escríbenos directamente:</p>
-                <a href="mailto:contacto@gria.solutions" class="contact-email">
-                    ✉️ contacto@gria.solutions
-                </a>
+                <p style="color: #6b7280; margin-bottom: 0.5rem;">O escribenos directamente:</p>
+                <a href="mailto:contacto@gria.solutions" class="contact-email">✉️ contacto@gria.solutions</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-logo">
             <div class="nav-logo-icon">🌱</div>
             <span style="font-weight: 700; font-size: 1.25rem;">BECO</span>
         </div>
-        <p class="footer-text">
-            BECO® es una marca de GRIA SpA · Sistema protegido por patente pendiente (USPTO 63/948,807)
-        </p>
-        <p class="footer-text" style="margin-top: 0.5rem;">
-            © 2025 GRIA SpA · Gestión Resiliente de Innovación Ambiental
-        </p>
+        <p class="footer-text">BECO es una marca de GRIA SpA - Sistema protegido por patente pendiente (USPTO 63/948,807)</p>
+        <p class="footer-text">2025 GRIA SpA - Gestion Resiliente de Innovacion Ambiental</p>
         <div class="footer-links">
             <a href="https://gria.solutions">GRIA SpA</a>
             <a href="https://www.linkedin.com/company/gria-spa">LinkedIn</a>
